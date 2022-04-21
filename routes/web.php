@@ -16,4 +16,5 @@ Route::get('/', function () {
 });
 
 
+Route::get('api_form/listar_submissions', 'ApiFormController@listar_submissions');
 Route::resource('api_form', 'ApiFormController');

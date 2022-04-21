@@ -133,6 +133,7 @@ return [
     | this array to grant expanded functionality to your applications.
     |
     */
+    'user_auth_token' => env('KOBO_USER_AUTH_TOKEN', null),
 
     'providers' => [
 
