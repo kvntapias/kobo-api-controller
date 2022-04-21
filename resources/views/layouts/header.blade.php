@@ -7,7 +7,7 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <title> @if (env('APP_ENV')!='production')
         (dev)
-        @endif ESCUELAS DE PARTICIPACIÓN CIUDADANA - 2021</title>
+        @endif API - BUILD PDFS</title>
 
     <!--Font awesome 5-->
     <link href="{{ asset('lib/font-awesome-5/css/fontawesome-all.min.css') }}" rel="stylesheet">
