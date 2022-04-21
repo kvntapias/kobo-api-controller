@@ -7,6 +7,20 @@
     {{ $form->nombre }}
 </h1>
 
+<h5>Submissions</h5>
+<table class="table text-center">
+    <thead>
+      <tr>
+        <th scope="col">ID</th>
+        <th scope="col">Date</th>
+        <th scope="col">Options</th>
+      </tr>
+    </thead>
+    <tbody>
+        
+    </tbody>
+</table>
+
 @endsection
 
 @section('script')
