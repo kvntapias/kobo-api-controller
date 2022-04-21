@@ -25,4 +25,5 @@
 
 @section('script')
     @include('lib_includes.datatables.js')
+    <script src="{{ asset('scripts/api_form/index.js?v='.microtime(true).'')}}"></script>
 @endsection
