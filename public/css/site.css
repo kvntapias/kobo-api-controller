@@ -1,0 +1,137 @@
+/*datepicker ajustar tamaño de calendarios*/
+.datepicker-inline {
+    width: 100%!important;
+}
+.datepicker table {
+    width: 100%!important;
+}
+
+
+
+/*seccion firma*/
+#sp_wraper {
+    position: relative;
+    width: 402px;
+    height: 202px;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    border: 1px solid rgb(109, 109, 109);
+  
+  }
+
+.signature-pad {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width:400px;
+    height:200px;
+    /* max-width:570px;
+    height:190px; */
+}
+
+.boton_firma{
+    border: 1px solid gray;
+}
+
+.item-evento-detalle p {
+    margin-bottom: 5px;
+}
+
+
+/* logos */
+.logo_peview{
+    height: 100px;
+    width: 200px;
+}
+
+.my-table-scrollbar {
+    position: relative;
+    height: 200px;
+    overflow: auto;
+}
+.table-wrapper-scroll-y {
+    width: 100%;
+    display: block;
+}
+
+.disabledSection {
+    pointer-events: none;
+    opacity: 0.4;
+}
+
+/* Parsley errors */
+.parsley-errors-list.filled {
+    opacity: 1;
+}
+
+.parsley-errors-list {
+    margin: 2px 0 3px;
+    padding: 0;
+    list-style-type: none;
+    font-size: 0.9em;
+    line-height: 0.9em;
+    opacity: 0;
+    color: #B94A48;
+    transition: all .3s ease-in;
+    -o-transition: all .3s ease-in;
+    -moz-transition: all .3s ease-in;
+    -webkit-transition: all .3s ease-in;
+}
+
+input.parsley-error, select.parsley-error, textarea.parsley-error {
+    color: #B94A48;
+    background-color: #F2DEDE;
+    border: 1px solid #eea1ac;
+}
+
+/* input.parsley-success, select.parsley-success, textarea.parsley-success {
+    color: #468847;
+    background-color: #DFF0D8;
+    border: 1px solid #D6E9C6;
+} */
+
+.datepicker table td.day:hover, 
+.datepicker table span.month:hover,
+.datepicker table span.year:hover{
+  background-color: #7bb7c9;
+}
+
+.modal-full-screen {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    top: 0;
+    left: 0;
+}
+
+.modal-overflow-y {
+    overflow-y:auto!important;
+  }
+
+.seguimiento_fila_matriz:hover {
+    background: rgb(207, 207, 207);
+}    
+
+.div_direccion:hover{
+    background-color: rgb(218, 218, 218);
+}
+
+.tr_nuevo_producto{
+    border: 1px solid rgb(105, 101, 101);
+
+    animation-name: blue;
+    animation-duration: 1.5s;
+    animation-fill-mode: forwards;
+    animation-delay: 0s;
+    background-color: rgb(137, 228, 114);
+}
+
+@keyframes blue {
+    to { background-color: white; }
+}
+
+.div_sub_item:hover{
+    background-color: rgb(218, 218, 218);
+}

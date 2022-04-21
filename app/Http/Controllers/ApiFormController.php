@@ -11,4 +11,9 @@ class ApiFormController extends Controller
         $forms = ApiForm::orderBy('nombre')->get();
         return view('api_form.index', compact('forms'));
     }
+
+    public function show($id){
+        $form = ApiForm::findOrFail($id);
+        return view('api_form.show', compact('form'));
+    }
 }
