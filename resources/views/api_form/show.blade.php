@@ -7,19 +7,13 @@
     {{ $form->nombre }}
 </h1>
 
-<h5>Submissions</h5>
-<table class="table text-center">
-    <thead>
-      <tr>
-        <th scope="col">ID</th>
-        <th scope="col">Date</th>
-        <th scope="col">Options</th>
-      </tr>
-    </thead>
-    <tbody>
-        
-    </tbody>
-</table>
+<div class="container">
+  <h5>Submissions</h5>
+  <button class="btn btn-sm btn-success float-right mb-2"  title="Refrescar" onclick="listar_submisions({{$form->id}})">
+    <i class="bi bi-arrow-counterclockwise"></i>
+  </button>
+</div>
+@include('api_form.submissions.tabla')
 
 @endsection
 
