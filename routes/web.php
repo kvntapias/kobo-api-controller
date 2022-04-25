@@ -18,3 +18,6 @@ Route::get('/', function () {
 
 Route::get('api_form/listar_submissions', 'ApiFormController@listar_submissions');
 Route::resource('api_form', 'ApiFormController');
+
+Route::get('api_form/{form_id}/mostrarSubmission/{submission_id}', 'ApiFormController@mostrarSubmission')
+->name('api_form.mostrar_submission');

@@ -46,4 +46,27 @@ class ApiFormController extends Controller
         $response = $client->request('GET', $url, $headers);
         return json_decode($response->getBody()->getContents());
     }
+
+    public function getFormJsonSubmission($form, $submission_id){
+        /**
+         * API URL EXAMPLE 
+         * https://kobo.humanitarianresponse.info/api/v2/assets/[form_id]/data/[submission_id]/?format=json
+         */
+        $url = 'https://kobo.humanitarianresponse.info/api/v2/assets/'.$form->kobo_key.'/data/'.$submission_id.'/?format=json';
+        $client = new \GuzzleHttp\Client();
+        $auth_token = config('app.user_auth_token');
+        $headers = [
+            'headers' => [
+                'Authorization' => 'token '.$auth_token,
+            ],
+        ];
+        $response = $client->request('GET', $url, $headers);
+        return json_decode($response->getBody()->getContents());
+    }
+
+    public function mostrarSubmission($form_id, $submission_id){
+        $form = ApiForm::find($form_id);
+        $res = $this->getFormJsonSubmission($form, $submission_id);
+        return $res;
+    }
 }
