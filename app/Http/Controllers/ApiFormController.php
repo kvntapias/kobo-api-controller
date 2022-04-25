@@ -30,12 +30,34 @@ class ApiFormController extends Controller
             "status" => $status,
             "errors" => $errors,
             "info" => $info,
-            "subs" => $subs
+            "form" => $subs['form'],
+            "subs" => $subs['kobo_info']
         ]);
     }
 
     public function getFormJsonSubmissions($form){
         $url = 'https://kobo.humanitarianresponse.info/assets/'.$form->kobo_key.'/submissions/?format=json';        
+        $client = new \GuzzleHttp\Client();
+        $auth_token = config('app.user_auth_token');
+        $headers = [
+            'headers' => [
+                'Authorization' => 'token '.$auth_token,
+            ],
+        ];
+        $response = $client->request('GET', $url, $headers);
+        $data =[
+                'kobo_info' => json_decode($response->getBody()->getContents()),
+                'form' => $form
+        ];
+        return $data;
+    }
+
+    public function getFormJsonStructure($form){
+        /**
+         * API URL EXAMPLE 
+         * https://kobo.humanitarianresponse.info/api/v2/assets/[form_id]/?format=json
+         */
+        $url = 'https://kobo.humanitarianresponse.info/api/v2/assets/'.$form->kobo_key.'/?format=json';
         $client = new \GuzzleHttp\Client();
         $auth_token = config('app.user_auth_token');
         $headers = [
@@ -68,5 +90,12 @@ class ApiFormController extends Controller
         $form = ApiForm::find($form_id);
         $res = $this->getFormJsonSubmission($form, $submission_id);
         return $res;
+    }
+
+    public function generar_pdf($form_id, $submission_id){
+        $form = ApiForm::find($form_id);
+        $submission = $this->getFormJsonSubmission($form, $submission_id);
+        $form_structure = $this->getFormJsonStructure($form);
+        echo "generando pdf";
     }
 }
