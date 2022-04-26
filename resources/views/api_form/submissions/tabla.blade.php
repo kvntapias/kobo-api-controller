@@ -1,4 +1,5 @@
-<table id="table_submissions" class="table text-center table-striped">
+<div class="table-responsive">
+<table style="width: 100%" id="table_submissions" class="table text-center table-striped">
     <thead>
       <tr>
         <th scope="col">ID</th>
@@ -11,3 +12,4 @@
         
     </tbody>
 </table>
+</div>

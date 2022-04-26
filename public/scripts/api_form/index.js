@@ -20,7 +20,16 @@ var subs_table;
 function submission_datatable(response){
     var id_form = response.form.id;
     subs_table =  $('#table_submissions').DataTable({
-        
+        processing: true,
+        serverSide: false,
+        "lengthMenu": [[10, 25, 50, -1], [10, 25, 50, "All"]],
+        "dom": "<'row'<'col-sm-6'l>B<'col-sm-6'f>>" +
+            "<'row'<'col-sm-12'tr>>" +
+            "<'row'<'col-sm-5'i><'col-sm-7'p>>",      
+        buttons: [
+        ],
+        "scrollX": true,
+        "iDisplayLenght": 5,
         data: response.subs,  // Get the data object
         "bDestroy": true,
         columns: [
