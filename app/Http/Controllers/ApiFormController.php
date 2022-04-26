@@ -94,8 +94,8 @@ class ApiFormController extends Controller
 
     public function generar_pdf($form_id, $submission_id){
         $form = ApiForm::find($form_id);
-        $submission = $this->getFormJsonSubmission($form, $submission_id);
-        $form_structure = $this->getFormJsonStructure($form);
+        //$submission = $this->getFormJsonSubmission($form, $submission_id);
+        //$form_structure = $this->getFormJsonStructure($form);
         return view('build_pdf.templates.eeac_2022.index');
     }
 }
