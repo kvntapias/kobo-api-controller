@@ -92,10 +92,20 @@ class ApiFormController extends Controller
         return $res;
     }
 
-    public function generar_pdf($form_id, $submission_id){
+    public function generar_pdf($form_id, $submission_id, $format = null){
         $form = ApiForm::find($form_id);
         //$submission = $this->getFormJsonSubmission($form, $submission_id);
         //$form_structure = $this->getFormJsonStructure($form);
-        return view('build_pdf.templates.eeac_2022.index');
+
+        if ($format == "pdf") {
+            $file_name = "PDF_".$submission_id.".pdf";
+            $template = \View::make('build_pdf.templates.eeac_2022.index')->render();
+            $pdf = \App::make('dompdf.wrapper');
+            $pdf->getDomPDF()->set_option("enable_php", true);
+            $pdf->loadHTML($template)->setPaper('A4', 'landscape');
+            return $pdf->stream($file_name, ['Attachment' => false]);
+        }else{
+            return view('build_pdf.templates.eeac_2022.index');
+        }
     }
 }

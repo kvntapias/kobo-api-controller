@@ -22,4 +22,4 @@ Route::resource('api_form', 'ApiFormController');
 Route::get('api_form/{form_id}/mostrarSubmission/{submission_id}', 'ApiFormController@mostrarSubmission')
 ->name('api_form.mostrar_submission');
 
-Route::get('api_form/{form_id}/generar_pdf/{submission_id}', 'ApiFormController@generar_pdf');
+Route::get('api_form/{form_id}/generar_pdf/{submission_id}/{format?}', 'ApiFormController@generar_pdf');
