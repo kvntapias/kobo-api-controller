@@ -105,7 +105,7 @@ class ApiFormController extends Controller
             $pdf->loadHTML($template)->setPaper('A4', 'landscape');
             return $pdf->stream($file_name, ['Attachment' => false]);
         }else{
-            return view('build_pdf.templates.eeac_2022.index');
+            return view('build_pdf.templates.eeac_2022.index', compact('submission', 'form_structure'));
         }
     }
 }

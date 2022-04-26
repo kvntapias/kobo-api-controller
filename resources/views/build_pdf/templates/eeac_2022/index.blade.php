@@ -8,6 +8,8 @@
         </style>
     </head>
     <body>
-        @include('build_pdf.templates.eeac_2022.pages.page_1')
+        <main>
+            @include('build_pdf.templates.eeac_2022.pages.page_1')
+        </main>
     </body>
 </html>
