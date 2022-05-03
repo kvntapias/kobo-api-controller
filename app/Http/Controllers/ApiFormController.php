@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\ApiForm;
 use Illuminate\Http\Request;
+use App\Helpers\hlp_Text;
+
 
 class ApiFormController extends Controller
 {
@@ -94,8 +96,11 @@ class ApiFormController extends Controller
 
     public function generar_pdf($form_id, $submission_id, $format = null){
         $form = ApiForm::find($form_id);
-        $submission = $this->getFormJsonSubmission($form, $submission_id);
-        $form_structure = $this->getFormJsonStructure($form);
+
+
+        $submission = null;
+        $form_structure = null;
+        $survey = $submission ? (array)$form_structure->content->survey : null;
 
         if ($format == "pdf") {
             $file_name = "PDF_".$submission_id.".pdf";
