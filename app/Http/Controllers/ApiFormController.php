@@ -98,8 +98,11 @@ class ApiFormController extends Controller
         $form = ApiForm::find($form_id);
 
 
+        //$submission = $this->getFormJsonSubmission($form, $submission_id);
+        //$form_structure = $this->getFormJsonStructure($form);
         $submission = null;
         $form_structure = null;
+        
         $survey = $submission ? (array)$form_structure->content->survey : null;
 
         if ($format == "pdf") {

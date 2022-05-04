@@ -41,3 +41,22 @@ body {
     align-items: right;
     justify-content: right;
 }
+
+.contenedor_ppal{
+    margin-left: 5px;
+    margin-right: 5px;
+    margin-top: 5px;
+}
+
+.basic_table > td {
+    margin-top: 0px;
+    color: red;
+}
+
+.full_right{
+    margin: auto 0 auto auto;
+}
+
+.tdresp{
+    text-align: center;
+}
