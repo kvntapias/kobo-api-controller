@@ -114,6 +114,53 @@
   </tr>
 </table>
 
+<!--Grupo Poblacional-->
+<table style="width: 100%" class="text-center">
+  <tr>
+    <td>
+      <div class="contenedor_ppal">
+        <table class="basic_table" style="width: 40%">
+            <tbody>
+                <tr>
+                  <td>
+                    <b>GRUPO POBLACIONAL :</b>
+                    xxxxxxxxx
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <b>NOMBRE DE LA COMUNIDAD O PUEBLO :</b>
+                    xxxxxxxxx
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <b>ESTADO DE LA ENTREGA :</b>
+                    xxxxxxxxx
+                  </td>
+                </tr>
+            </tbody>
+        </table>
+      </div>
+    </td>
+    <!--ejecucion-->
+    <td>
+      <div class="contenedor_ppal">
+        <table class="basic_table" style="width: 40%">
+            <tbody>
+                <tr>
+                  <td>
+                    <b>PARTICIPANTES EN LA EJECUCIÓN DEL PROYECTO :</b>
+                    xxxxxxxxx
+                  </td>
+                </tr>
+            </tbody>
+        </table>
+      </div>
+    </td>
+  </tr>
+</table>
+
 {{--   
 # TEMPLATE
 <div class="contenedor_ppal">
