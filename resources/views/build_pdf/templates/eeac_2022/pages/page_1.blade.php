@@ -42,84 +42,81 @@
 </div>
 
 <!--Departamento/Municipio/Dane-->
-<table style="width: 100%" class="text-center">
-  <tr>
-    <!--DEPT-MUNICIP-DANE ETC.-->
-    <td>
-      <div class="contenedor_ppal">
-        <table class="basic_table" style="width: 40%">
-            <tbody>
-                <tr>
-                  <td>
-                    <b>DEPARTAMENTO :</b>
-                    ANTIOQUIA
-                  </td>
-                </tr>
-                <tr>
-                  <td>
-                    <b>MUNICIPIO :</b>
-                    MEDELLIN
-                  </td>
-                </tr>
-                <tr>
-                  <td>
-                    <b>CÓDIGO DANE :</b>
-                    0000
-                  </td>
-                </tr>
-                <tr>
-                  <td>
-                    <b>DIRECCIÓN TERRITORIAL :</b>
-                    0000
-                  </td>
-                </tr>
-            </tbody>
+<div class="contenedor_ppal">
+  <table style="width: 100%" class="text-center">
+    <tr>
+      <!--DEPT-MUNICIP-DANE ETC.-->
+      <td width="50%">
+        <table class="basic_table">
+          <tbody>
+            <tr>
+              <td>
+                <b>DEPARTAMENTO :</b>
+                ANTIOQUIA
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <b>MUNICIPIO :</b>
+                MEDELLIN
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <b>CÓDIGO DANE :</b>
+                0000
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <b>DIRECCIÓN TERRITORIAL :</b>
+                0000
+              </td>
+            </tr>
+          </tbody>
         </table>
-      </div>
-    </td>
-    <!--CORREMTO-VEREDA-ZONA ETC.-->
-    <td>
-      <div class="contenedor_ppal">
-        <table class="basic_table" style="width: 40%">
-            <tbody>
-                <tr>
-                  <td>
-                    <b>CORREGIMIENTO O LOCALIDAD :</b>
-                    ANTIOQUIA
-                  </td>
-                </tr>
-                <tr>
-                  <td>
-                    <b>VEREDA O BARRIO :</b>
-                    MEDELLIN
-                  </td>
-                </tr>
-                <tr>
-                  <td>
-                    <b>ZONA DE INTERVENCIÓN :</b>
-                    0000
-                  </td>
-                </tr>
-                <tr>
-                  <td>
-                    <b>DIRECCIÓN :</b>
-                    0000
-                  </td>
-                </tr>
-            </tbody>
+      </td>
+      <!--CORREMTO-VEREDA-ZONA ETC.-->
+      <td width="50%">
+        <table class="basic_table" style="width: 100%">
+          <tbody>
+            <tr>
+              <td>
+                <b>CORREGIMIENTO O LOCALIDAD :</b>
+                ANTIOQUIA
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <b>VEREDA O BARRIO :</b>
+                MEDELLIN
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <b>ZONA DE INTERVENCIÓN :</b>
+                0000
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <b>DIRECCIÓN :</b>
+                0000
+              </td>
+            </tr>
+          </tbody>
         </table>
-      </div>
-
-    </td>
-  </tr>
-</table>
+      </td>
+    </tr>
+  </table>
+</div>
 
 <!--Grupo Poblacional-->
-<table style="width: 100%" class="text-center">
-  <tr>
-    <td>
-      <div class="contenedor_ppal">
-        <table class="basic_table" style="width: 40%">
+<div class="contenedor_ppal">
+  <table style="width: 100%" class="text-center">
+    <tr>
+      <td width="50%">
+        <table class="basic_table">
             <tbody>
                 <tr>
                   <td>
@@ -141,12 +138,10 @@
                 </tr>
             </tbody>
         </table>
-      </div>
-    </td>
-    <!--ejecucion-->
-    <td>
-      <div class="contenedor_ppal">
-        <table class="basic_table" style="width: 40%">
+      </td>
+      <!--ejecucion-->
+      <td width="50%">
+        <table class="basic_table">
             <tbody>
                 <tr>
                   <td>
@@ -156,10 +151,10 @@
                 </tr>
             </tbody>
         </table>
-      </div>
-    </td>
-  </tr>
-</table>
+      </td>
+    </tr>
+  </table>
+</div>
 
 {{--   
 # TEMPLATE
