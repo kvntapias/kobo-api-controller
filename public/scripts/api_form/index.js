@@ -46,7 +46,7 @@ function submission_datatable(response){
 }
 
 function pdf_export(form_id, submission_id){
-    var url_to = public_path + "api_form/"+form_id+"/generar_pdf/"+submission_id;
+    var url_to = public_path + "api_form/"+form_id+"/generar_pdf/"+submission_id+"/pdf";
     window.open(url_to);
     /* $.ajax({
         type: "GET",
