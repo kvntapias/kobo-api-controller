@@ -156,6 +156,53 @@
   </table>
 </div>
 
+<!--Linea de intervensión-->
+<div class="contenedor_ppal">
+  <table style="width: 100%" class="text-center">
+    <tr>
+      <td width="100%">
+        <table class="basic_table">
+            <tbody>
+                <tr>
+                  <td>
+                    <b>LINEA DE INTERVENCIÓN :</b>
+                    xxxxxxxxx
+                  </td>
+                </tr>
+            </tbody>
+        </table>
+      </td>
+    </tr>
+  </table>
+</div>
+
+<!--Georeferenciacion-->
+<div class="contenedor_ppal">
+  <table style="width: 100%" class="text-center">
+    <tr>
+      <td width="100%">
+        <table class="basic_table">
+            <tbody>
+                <tr>
+                  <td>
+                    <b>GEOREFERENCIACION :</b>
+                  </td>
+                  <td>
+                    <b>LATITUD :</b>
+                    000000000000
+                  </td>
+                  <td>
+                    <b>LONGITUD :</b>
+                    000000000000
+                  </td>
+                </tr>
+            </tbody>
+        </table>
+      </td>
+    </tr>
+  </table>
+</div>
+
 {{--   
 # TEMPLATE
 <div class="contenedor_ppal">
