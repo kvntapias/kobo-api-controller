@@ -133,7 +133,7 @@
                 <tr>
                   <td>
                     <b>ESTADO DE LA ENTREGA :</b>
-                    -
+                    {{ $build_pdf->imprimir_texto('ESTADO_DE_LA_ENTREGA') }}
                   </td>
                 </tr>
             </tbody>
