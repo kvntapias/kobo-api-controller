@@ -99,14 +99,13 @@ class ApiFormController extends Controller
         $form = ApiForm::find($form_id);
 
 
-        //$submission = $this->getFormJsonSubmission($form, $submission_id);
-        //$form_structure = $this->getFormJsonStructure($form);
-        $submission = null;
-        $form_structure = null;
+        $submission = $this->getFormJsonSubmission($form, $submission_id);
+        $form_structure = $this->getFormJsonStructure($form);
         
-        $survey = $submission ? (array)$form_structure->content->survey : null;
-        
-        $build_pdf = new hlp_BuilPdf($survey, $submission);
+        $survey = (array)$form_structure->content->survey;
+        $form_choises = $form_structure->content->choices;
+
+        $build_pdf = new hlp_BuilPdf($survey, $submission, $form_choises);
 
         if ($format == "pdf") {
             $file_name = "PDF_".$submission_id.".pdf";

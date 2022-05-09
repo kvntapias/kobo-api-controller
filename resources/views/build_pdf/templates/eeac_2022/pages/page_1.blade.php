@@ -8,13 +8,13 @@
           <tr>
             <td>
               <b>AUTORIZACIÓN TRATAMIENTO DE DATOS PERSONALES : </b>
-              SI
+              {{ $build_pdf->imprimir_texto('Autorizaci_n_tratami_de_datos_personales') }}
             </td>
           </tr>
           <tr>
             <td>
               <b>FECHA DE LA VISITA :</b>
-              00/00/0000
+              {{ $build_pdf->imprimir_texto('FECHA_DE_LA_VISITA') }}
             </td>
           </tr>
       </tbody>
@@ -28,13 +28,13 @@
           <tr>
             <td>
               <b>NOMBRE DEL ESQUEMA :</b>
-              Lorem ipsum dolor, sit amet consectetur adipisicing elit. 
+              {{ $build_pdf->imprimir_texto('NOMBRE_DEL_ESQUEMA') }}
             </td>
           </tr>
           <tr>
             <td>
               <b>CÓDGO DEL ESQUEMA :</b>
-              #RESPUESTA
+              {{ $build_pdf->imprimir_texto('C_DIGO_DEL_ESQUEMA') }}
             </td>
           </tr>
       </tbody>
@@ -52,25 +52,25 @@
             <tr>
               <td>
                 <b>DEPARTAMENTO :</b>
-                ANTIOQUIA
+                {{ $build_pdf->imprimir_texto('departamento') }}
               </td>
             </tr>
             <tr>
               <td>
                 <b>MUNICIPIO :</b>
-                MEDELLIN
+                {{ $build_pdf->imprimir_texto('municipio') }}
               </td>
             </tr>
             <tr>
               <td>
                 <b>CÓDIGO DANE :</b>
-                0000
+                {{ $build_pdf->imprimir_texto('codigo_dane') }}
               </td>
             </tr>
             <tr>
               <td>
                 <b>DIRECCIÓN TERRITORIAL :</b>
-                0000
+                {{ $build_pdf->imprimir_texto('DIRECCI_N_TERRITORIAL') }}
               </td>
             </tr>
           </tbody>
@@ -83,25 +83,25 @@
             <tr>
               <td>
                 <b>CORREGIMIENTO O LOCALIDAD :</b>
-                ANTIOQUIA
+                {{ $build_pdf->imprimir_texto('CORREGIMIENTO_O_LOCALIDAD') }}
               </td>
             </tr>
             <tr>
               <td>
                 <b>VEREDA O BARRIO :</b>
-                MEDELLIN
+                {{ $build_pdf->imprimir_texto('VEREDA_O_BARRIO') }}
               </td>
             </tr>
             <tr>
               <td>
                 <b>ZONA DE INTERVENCIÓN :</b>
-                0000
+                {{ $build_pdf->imprimir_texto('ZONA_DE_INTERVENCION') }}
               </td>
             </tr>
             <tr>
               <td>
                 <b>DIRECCIÓN :</b>
-                0000
+                {{ $build_pdf->imprimir_texto('DIRECCION') }}
               </td>
             </tr>
           </tbody>
@@ -121,19 +121,19 @@
                 <tr>
                   <td>
                     <b>GRUPO POBLACIONAL :</b>
-                    xxxxxxxxx
+                    {{ $build_pdf->imprimir_texto('_3_GRUPO_POBLACIONAL') }}
                   </td>
                 </tr>
                 <tr>
                   <td>
                     <b>NOMBRE DE LA COMUNIDAD O PUEBLO :</b>
-                    xxxxxxxxx
+                    {{ $build_pdf->imprimir_texto('_3_1_NOMBRE_DE_LA_COMUNIDAD_O_PUEBLO') }}
                   </td>
                 </tr>
                 <tr>
                   <td>
                     <b>ESTADO DE LA ENTREGA :</b>
-                    xxxxxxxxx
+                    -
                   </td>
                 </tr>
             </tbody>
@@ -146,7 +146,7 @@
                 <tr>
                   <td>
                     <b>PARTICIPANTES EN LA EJECUCIÓN DEL PROYECTO :</b>
-                    xxxxxxxxx
+                    {{ $build_pdf->imprimir_texto('_4_PARTICIPANTES_EN_LA_EJECUCI') }}
                   </td>
                 </tr>
             </tbody>
@@ -166,7 +166,7 @@
                 <tr>
                   <td>
                     <b>LINEA DE INTERVENCIÓN :</b>
-                    xxxxxxxxx
+                    {{ $build_pdf->imprimir_texto('_2_LINEA_DE_INVERSION_EEAC') }}
                   </td>
                 </tr>
             </tbody>
@@ -188,13 +188,13 @@
                     <b>GEOREFERENCIACION :</b>
                   </td>
                   <td>
-                    <b>LATITUD :</b>
-                    000000000000
+                    <b>LATITUD/LONGITUD</b>
+                    {{ $build_pdf->imprimir_texto('GEOREFERENCIACION') }}
                   </td>
-                  <td>
+                  {{-- <td>
                     <b>LONGITUD :</b>
-                    {{ $build_pdf->imprimir_texto() }}
-                  </td>
+                    {{ $build_pdf->imprimir_texto('') }}
+                  </td> --}}
                 </tr>
             </tbody>
         </table>
