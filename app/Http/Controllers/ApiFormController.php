@@ -5,10 +5,11 @@ namespace App\Http\Controllers;
 use App\ApiForm;
 use Illuminate\Http\Request;
 use App\Helpers\hlp_Text;
-
+use App\Helpers\hlp_BuilPdf;
 
 class ApiFormController extends Controller
 {
+
     public function index(){
         $forms = ApiForm::orderBy('nombre')->get();
         return view('api_form.index', compact('forms'));
@@ -104,10 +105,12 @@ class ApiFormController extends Controller
         $form_structure = null;
         
         $survey = $submission ? (array)$form_structure->content->survey : null;
+        
+        $build_pdf = new hlp_BuilPdf($survey, $submission);
 
         if ($format == "pdf") {
             $file_name = "PDF_".$submission_id.".pdf";
-            $template = \View::make('build_pdf.templates.eeac_2022.index', compact('submission', 'form_structure'))->render();
+            $template = \View::make('build_pdf.templates.eeac_2022.index', compact('submission', 'form_structure', 'build_pdf'))->render();
             $pdf = \App::make('dompdf.wrapper');
             $pdf->getDomPDF()->set_option("enable_php", true);
             $pdf->loadHTML($template)->setPaper('A4', 'landscape');

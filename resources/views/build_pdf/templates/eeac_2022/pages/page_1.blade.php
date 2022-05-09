@@ -193,7 +193,7 @@
                   </td>
                   <td>
                     <b>LONGITUD :</b>
-                    000000000000
+                    {{ $build_pdf->imprimir_texto() }}
                   </td>
                 </tr>
             </tbody>
