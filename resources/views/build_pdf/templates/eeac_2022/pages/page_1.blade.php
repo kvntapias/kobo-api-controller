@@ -181,7 +181,7 @@
 </div>
 
 <!--Georeferenciacion-->
-<div class="contenedor_ppal">
+<div class="contenedor_ppal" style="page-break-after: always;">
   <table style="width: 100%" class="text-center">
     <tr>
       <td width="100%">
