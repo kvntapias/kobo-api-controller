@@ -15,8 +15,39 @@ class hlp_BuilPdf{
         $this->form_choises = $form_choises;
     }
 
-    public function imprimir_texto($label = null){
-        return $label ? $this->form_submission->{$label} : "";
+    public function imprimir_texto($label = null, $withChoiseLabel = false){
+        $respuesta = $this->form_submission->{$label} ?? "";
+        if ($respuesta) {
+            if ($withChoiseLabel) {
+                return $this->getChoiseLabel($respuesta);
+            }else{
+                return $respuesta ?? "";
+            }
+        }else{
+            return "";
+        }
+    }
+
+    public function imprimir_texto_implode($label = null, $mayus = false, $search = " ", $separated = ","){
+        $respuesta = $this->imprimir_texto($label);
+        if ($respuesta) {
+            $respuesta = str_replace($search, $separated, $respuesta);
+            $respuesta = $mayus ? strtoupper($respuesta) : $respuesta;
+        }
+        return $respuesta;
+    }
+
+    public function getChoise($name){
+        $array = $this->form_choises;
+        $choise = array_filter($array, function($items) use($name) {
+            return $items->name == $name;
+        });
+        return reset($choise);
+    }
+
+    public function getChoiseLabel($name){
+        $choise = $this->getChoise($name);
+        return $choise ? $choise->label[0] : "";
     }
 
 }

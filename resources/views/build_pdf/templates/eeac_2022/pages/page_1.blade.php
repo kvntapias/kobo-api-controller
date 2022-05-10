@@ -8,7 +8,7 @@
           <tr>
             <td>
               <b>AUTORIZACIÓN TRATAMIENTO DE DATOS PERSONALES : </b>
-              {{ $build_pdf->imprimir_texto('Autorizaci_n_tratami_de_datos_personales') }}
+              {{ $build_pdf->imprimir_texto('Autorizaci_n_tratami_de_datos_personales', true) }}
             </td>
           </tr>
           <tr>
@@ -52,13 +52,13 @@
             <tr>
               <td>
                 <b>DEPARTAMENTO :</b>
-                {{ $build_pdf->imprimir_texto('departamento') }}
+                {{ $build_pdf->imprimir_texto('departamento', true) }}
               </td>
             </tr>
             <tr>
               <td>
                 <b>MUNICIPIO :</b>
-                {{ $build_pdf->imprimir_texto('municipio') }}
+                {{ $build_pdf->imprimir_texto('municipio', true) }}
               </td>
             </tr>
             <tr>
@@ -70,7 +70,7 @@
             <tr>
               <td>
                 <b>DIRECCIÓN TERRITORIAL :</b>
-                {{ $build_pdf->imprimir_texto('DIRECCI_N_TERRITORIAL') }}
+                {{ $build_pdf->imprimir_texto('DIRECCI_N_TERRITORIAL', true) }}
               </td>
             </tr>
           </tbody>
@@ -121,7 +121,7 @@
                 <tr>
                   <td>
                     <b>GRUPO POBLACIONAL :</b>
-                    {{ $build_pdf->imprimir_texto('_3_GRUPO_POBLACIONAL') }}
+                    {{ $build_pdf->imprimir_texto('_3_GRUPO_POBLACIONAL', true) }}
                   </td>
                 </tr>
                 <tr>
@@ -133,7 +133,7 @@
                 <tr>
                   <td>
                     <b>ESTADO DE LA ENTREGA :</b>
-                    {{ $build_pdf->imprimir_texto('ESTADO_DE_LA_ENTREGA') }}
+                    {{ $build_pdf->imprimir_texto('ESTADO_DE_LA_ENTREGA', true) }}
                   </td>
                 </tr>
             </tbody>
@@ -146,7 +146,9 @@
                 <tr>
                   <td>
                     <b>PARTICIPANTES EN LA EJECUCIÓN DEL PROYECTO :</b>
-                    {{ $build_pdf->imprimir_texto('_4_PARTICIPANTES_EN_LA_EJECUCI') }}
+                    {{ $build_pdf->imprimir_texto_implode('_4_PARTICIPANTES_EN_LA_EJECUCI', true) }}
+                    <br>
+                    {{ $build_pdf->imprimir_texto('_4_1_CUAL') }}
                   </td>
                 </tr>
             </tbody>
@@ -166,7 +168,7 @@
                 <tr>
                   <td>
                     <b>LINEA DE INTERVENCIÓN :</b>
-                    {{ $build_pdf->imprimir_texto('_2_LINEA_DE_INVERSION_EEAC') }}
+                    {{ $build_pdf->imprimir_texto('_2_LINEA_DE_INVERSION_EEAC', true) }}
                   </td>
                 </tr>
             </tbody>
