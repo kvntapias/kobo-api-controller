@@ -72,6 +72,20 @@ class ApiFormController extends Controller
         return json_decode($response->getBody()->getContents());
     }
 
+    public function getFormAttachment($form, $submission, $attach_id){
+        $url = 'https://kobo.humanitarianresponse.info/api/v2/assets/'.$form->kobo_key."/data/".$submission->_id."/attachments/".$attach_id;
+        $client = new \GuzzleHttp\Client();
+        $auth_token = config('app.user_auth_token');
+        $headers = [
+            'headers' => [
+                'Authorization' => 'token '.$auth_token,
+            ],
+            'stream' => true
+        ];
+        $response = $client->request('GET', $url, $headers);
+        return $response->getBody()->getContents();
+    }
+
     public function getFormJsonSubmission($form, $submission_id){
         /**
          * API URL EXAMPLE 
@@ -109,7 +123,7 @@ class ApiFormController extends Controller
         $survey = (array)$form_structure->content->survey;
         $form_choises = $form_structure->content->choices;
 
-        $build_pdf = new hlp_BuilPdf($survey, $submission, $form_choises);
+        $build_pdf = new hlp_BuilPdf($survey, $submission, $form_choises, $form );
 
         if ($format == "pdf") {
             $file_name = "PDF_".$submission_id.".pdf";

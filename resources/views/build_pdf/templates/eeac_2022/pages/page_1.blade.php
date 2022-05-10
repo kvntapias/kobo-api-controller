@@ -196,6 +196,12 @@
                     {{ $build_pdf->imprimir_texto('GEOREFERENCIACION') }}                    
                   </td>
                 </tr>
+                <tr>
+                  <td>
+                    <b>SOPORTE DE SEGUIMIENTO A LA OBRA :</b>
+                    {!! $build_pdf->showImgServer('Soporte_de_seguimiento_a_la_obra', 350, 350) !!}
+                  </td>
+                </tr>
             </tbody>
         </table>
       </td>
