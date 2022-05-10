@@ -171,6 +171,7 @@
                   <td>
                     <b>LINEA DE INTERVENCIÓN :</b>
                     {{ $build_pdf->imprimir_texto('_2_LINEA_DE_INVERSION_EEAC', true) }}
+                    {{ $build_pdf->imprimir_texto('_2_1_Seleccione_dotaci_n', true) ? " - ".$build_pdf->imprimir_texto('_2_1_Seleccione_dotaci_n', true) : "" }}
                   </td>
                 </tr>
             </tbody>
