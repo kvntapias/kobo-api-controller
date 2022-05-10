@@ -193,12 +193,8 @@
                   </td>
                   <td>
                     <b>LATITUD/LONGITUD</b>
-                    {{ $build_pdf->imprimir_texto('GEOREFERENCIACION') }}
+                    {{ $build_pdf->imprimir_texto('GEOREFERENCIACION') }}                    
                   </td>
-                  {{-- <td>
-                    <b>LONGITUD :</b>
-                    {{ $build_pdf->imprimir_texto('') }}
-                  </td> --}}
                 </tr>
             </tbody>
         </table>
