@@ -113,7 +113,7 @@ class ApiFormController extends Controller
 
         if ($format == "pdf") {
             $file_name = "PDF_".$submission_id.".pdf";
-            $template = \View::make('build_pdf.'.$template, compact('submission', 'form_structure', 'build_pdf'))->render();
+            $template = \View::make('build_pdf.templates.'.$template, compact('submission', 'form_structure', 'build_pdf'))->render();
             $pdf = \App::make('dompdf.wrapper');
             $pdf->getDomPDF()->set_option("enable_php", true);
             $pdf->loadHTML($template)->setPaper('A4', 'landscape');
