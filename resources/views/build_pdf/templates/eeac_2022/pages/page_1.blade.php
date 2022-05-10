@@ -122,6 +122,8 @@
                   <td>
                     <b>GRUPO POBLACIONAL :</b>
                     {{ $build_pdf->imprimir_texto('_3_GRUPO_POBLACIONAL', true) }}
+                    <br>
+                    {{ $build_pdf->imprimir_texto('_3_1_Indique_cual') }}
                   </td>
                 </tr>
                 <tr>
