@@ -50,7 +50,22 @@ class hlp_BuilPdf{
 
     public function getChoiseLabel($name){
         $choise = $this->getChoise($name);
-        return $choise ? $choise->label[0] : "";
+        return $choise ? $choise->label[0] : null;
+    }
+
+    public function getSurveyItem($name){
+        $array = $this->form_structure;
+        $choise = array_filter($array, function($items) use($name) {
+            if (isset($items->name)) {
+                return $items->name == $name ? $items : null;
+            }
+        });
+        return reset($choise);
+    }
+
+    public function getSurveyLabel($name){
+        $item = $this->getSurveyItem($name);
+        return $item ? $item->label[0] : "";
     }
 
     /**
@@ -93,5 +108,28 @@ class hlp_BuilPdf{
                 return "<img class='attach_image' src=$img alt='image' heigth=".$heigth." width=".$width." >";
             }
         }
+    }
+
+    public function imprimir_grupo_respuestas($group_name){
+        $surveyItem = $this->getSurveyItem($group_name);
+        $label = $surveyItem ? $surveyItem->label[0] : "";
+        $grupo = $surveyItem->name;
+        $submission = (array)$this->form_submission;
+
+        $respuestas_grupo = [];
+
+        foreach (array_keys($submission) as $idx => $value) {
+            if (str_contains($value, $group_name)) {
+                $trimmed_key = str_replace($group_name."/", "", $value);
+                
+                $label_preg = $this->getSurveyLabel($trimmed_key);
+                $respuesta = $this->imprimir_texto($value);
+                $respuestas_grupo[] = [
+                    'pregunta' => $label_preg,
+                    'respuesta' => $this->getChoiseLabel($respuesta) ?? $respuesta
+                ];
+            }
+        }
+        return $respuestas_grupo;        
     }
 }
