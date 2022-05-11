@@ -110,10 +110,14 @@ class hlp_BuilPdf{
         }
     }
 
+    /**
+     * Mostrar grupos de respuesta relacionados con prefijo del grupo ("grouo_nnn1/LABEL_PREGUNTA")
+     * Se compara si la concatenacion contiene el nombre del grupo y se añade al arreglo.
+     */
     public function imprimir_grupo_respuestas($group_name){
         $surveyItem = $this->getSurveyItem($group_name);
-        $label = $surveyItem ? $surveyItem->label[0] : "";
-        $grupo = $surveyItem->name;
+        //$label = $surveyItem ? $surveyItem->label[0] : "";
+        //$grupo = $surveyItem->name;
         $submission = (array)$this->form_submission;
 
         $respuestas_grupo = [];
