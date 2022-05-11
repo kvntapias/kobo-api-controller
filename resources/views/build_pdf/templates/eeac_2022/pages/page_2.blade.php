@@ -7,10 +7,6 @@
         <td width="50%">
           <table class="basic_table text-center" style="width: 100%">
             <tbody>
-              <tr>
-                <td>
-                </td>
-              </tr>
               @foreach ($build_pdf->imprimir_grupo_respuestas('group_du4lw03') as $grup_rpta)
                 <tr style="border: 1px solid black">
                   <td>
