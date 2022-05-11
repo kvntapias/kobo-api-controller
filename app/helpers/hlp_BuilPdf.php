@@ -59,6 +59,9 @@ class hlp_BuilPdf{
             if (isset($items->name)) {
                 return $items->name == $name ? $items : null;
             }
+            if (isset($items->{'$autoname'})) {
+                return $items->{'$autoname'} == $name ? $items : null;
+            }
         });
         return reset($choise);
     }
@@ -130,7 +133,8 @@ class hlp_BuilPdf{
                 $respuesta = $this->imprimir_texto($value);
                 $respuestas_grupo[] = [
                     'pregunta' => $label_preg,
-                    'respuesta' => $this->getChoiseLabel($respuesta) ?? $respuesta
+                    'respuesta' => $this->getChoiseLabel($respuesta) ?? $respuesta,
+                    'key' => $value
                 ];
             }
         }
