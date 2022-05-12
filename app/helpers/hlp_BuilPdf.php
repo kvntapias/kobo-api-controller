@@ -131,13 +131,36 @@ class hlp_BuilPdf{
                 $respuesta = $this->imprimir_texto($value);
 
                 if (is_array($respuesta)) {
-                                 
+                    foreach ($respuesta[0] as $key => $subResp) {
+                        $trimmed_subkey = basename($key);
+                        $surveySubItem = $this->getSurveyItem($trimmed_subkey);
+                        $surveySubItemLabel = $this->getSurveyLabel($trimmed_subkey);
+
+                        switch ($surveySubItem->type) {
+                            case 'image':
+                                $subResp = $this->showImgServer(false, $subResp, 300,300);
+                            break;
+                            
+                            default:
+                                # code...
+                            break;
+                        }
+
+                        $respuestas_grupo[] = [
+                            'pregunta' => $surveySubItemLabel,
+                            'respuesta' => $subResp,
+                            'key' => $trimmed_subkey,
+                            'formatted' => $key,
+                            'type' => $surveySubItem->type ?? null
+                        ];
+                    }     
                 }else{
                     $respuestas_grupo[] = [
                         'pregunta' => $label_preg,
                         'respuesta' => $this->format_respuesta($surveyItemPreg, $respuesta) ?? $respuesta,
                         'key' => $value,
-                        'formatted' => $this->format_respuesta($surveyItemPreg, $respuesta)
+                        'formatted' => $this->format_respuesta($surveyItemPreg, $respuesta),
+                        'type' => $surveyItemPreg->type ?? null 
                     ];
                 }
             }
