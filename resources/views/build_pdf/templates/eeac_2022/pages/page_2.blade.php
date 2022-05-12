@@ -145,7 +145,7 @@
           <td>  <h4 class="text-center">REGISTRO FOTOGRÁFICO VISITA</h4>
           </td>
         </tr>
-        @foreach ($build_pdf->imprimir_grupo_respuestas('group_wg8zp28/group_nl9hv20', true) as $grup_rpta)
+        @foreach ($build_pdf->imprimir_grupo_respuestas('group_yb9ow60', true) as $grup_rpta)
           @switch($grup_rpta['type'])
               @case('image')
                 <tr style="border: 1px solid black">
@@ -182,7 +182,7 @@
           <td>  <h4 class="text-center">SOPORTES ADICIONALES A LA VISITA</h4>
           </td>
         </tr>
-        @foreach ($build_pdf->imprimir_grupo_respuestas('group_yb9ow60', true) as $grup_rpta)
+        @foreach ($build_pdf->imprimir_grupo_respuestas('group_wg8zp28/group_nl9hv20', true) as $grup_rpta)
           @switch($grup_rpta['type'])
               @case('image')
                 <tr style="border: 1px solid black">
