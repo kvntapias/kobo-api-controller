@@ -137,3 +137,24 @@
   </table>
 </div>
 
+<!--REGISTRO FOTOGRÁFICO VISITA-->
+<div class="contenedor_ppal">
+  <table style="width: 100%; page-break-inside: avoid;" class="text-center">
+      <tbody>
+        <tr>
+          <td>  <h4 class="text-center">REGISTRO FOTOGRÁFICO VISITA</h4>
+          </td>
+        </tr>
+        @foreach ($build_pdf->imprimir_grupo_respuestas('group_yb9ow60') as $grup_rpta)
+          {{-- <tr style="border: 1px solid black">
+            <td>
+              {{ $grup_rpta['pregunta'] }} : <br>
+            </td>
+            <td>
+              {{ $grup_rpta['respuesta'] }}
+            </td>
+          </tr> --}}
+        @endforeach
+      </tbody>
+  </table>
+</div>
