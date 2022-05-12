@@ -118,7 +118,7 @@ class hlp_BuilPdf{
      * Se compara si la concatenacion contiene el nombre del grupo y se añade al arreglo.
      */
     public function imprimir_grupo_respuestas($group_name){
-        $surveyItem = $this->getSurveyItem($group_name);
+        //$surveyItem = $this->getSurveyItem($group_name);
         //$label = $surveyItem ? $surveyItem->label[0] : "";
         //$grupo = $surveyItem->name;
         $submission = (array)$this->form_submission;
