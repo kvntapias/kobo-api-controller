@@ -153,6 +153,12 @@ class hlp_BuilPdf{
                         }
                     }
                 }else{
+
+                    switch ($surveyItemPreg->type) {
+                        case 'image':
+                            $respuesta = $this->showImgServer(false, $respuesta, 300,300);
+                        break;
+                    }
                     $respuestas_grupo[] = [
                         'pregunta' => $label_preg,
                         'respuesta' => $this->format_respuesta($surveyItemPreg, $respuesta) ?? $respuesta,

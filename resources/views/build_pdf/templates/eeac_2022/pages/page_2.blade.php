@@ -210,3 +210,39 @@
       </tbody>
   </table>
 </div>
+
+<!--SOPORTES ADICIONALES VISITA-->
+<div class="contenedor_ppal">
+  <table style="width: 100%; page-break-inside: avoid;" class="text-center">
+      <tbody>
+        <tr>
+          <td>  <h4 class="text-center">**CONSTANCIA DE DESARROLLO DE LA VISITA**</h4>
+          </td>
+        </tr>
+        @foreach ($build_pdf->imprimir_grupo_respuestas('group_ni9ib61') as $grup_rpta)
+          @switch($grup_rpta['type'])
+              @case('image')
+                <tr style="border: 1px solid black">
+                  <td>
+                    {{ $grup_rpta['pregunta'] }} : <br>
+                  </td>
+                  <td>
+                    {!! $grup_rpta['respuesta'] !!}
+                  </td>
+                </tr>
+              @break
+              @case('text')
+                <tr style="border: 1px solid black">
+                  <td>
+                    {{ $grup_rpta['pregunta'] }} : <br>
+                  </td>
+                  <td>
+                    {{ $grup_rpta['respuesta'] }}
+                  </td>
+                </tr>
+              @break                  
+          @endswitch
+        @endforeach
+      </tbody>
+  </table>
+</div>
