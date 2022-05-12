@@ -131,25 +131,27 @@ class hlp_BuilPdf{
                 $respuesta = $this->imprimir_texto($value);
 
                 if (is_array($respuesta)) {
-                    foreach ($respuesta[0] as $key => $subResp) {
-                        $trimmed_subkey = basename($key);
-                        $surveySubItem = $this->getSurveyItem($trimmed_subkey);
-                        $surveySubItemLabel = $this->getSurveyLabel($trimmed_subkey);
-
-                        switch ($surveySubItem->type) {
-                            case 'image':
-                                $subResp = $this->showImgServer(false, $subResp, 300,300);
-                            break;
+                    for ($i = 0; $i < count($respuesta); $i++) { 
+                        foreach ($respuesta[$i] as $key => $subResp) {
+                            $trimmed_subkey = basename($key);
+                            $surveySubItem = $this->getSurveyItem($trimmed_subkey);
+                            $surveySubItemLabel = $this->getSurveyLabel($trimmed_subkey);
+    
+                            switch ($surveySubItem->type) {
+                                case 'image':
+                                    $subResp = $this->showImgServer(false, $subResp, 300,300);
+                                break;
+                            }
+    
+                            $respuestas_grupo[] = [
+                                'pregunta' => $surveySubItemLabel,
+                                'respuesta' => $subResp,
+                                'key' => $trimmed_subkey,
+                                'formatted' => $key,
+                                'type' => $surveySubItem->type ?? null
+                            ];
                         }
-
-                        $respuestas_grupo[] = [
-                            'pregunta' => $surveySubItemLabel,
-                            'respuesta' => $subResp,
-                            'key' => $trimmed_subkey,
-                            'formatted' => $key,
-                            'type' => $surveySubItem->type ?? null
-                        ];
-                    }     
+                    }
                 }else{
                     $respuestas_grupo[] = [
                         'pregunta' => $label_preg,
