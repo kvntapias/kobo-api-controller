@@ -1,6 +1,6 @@
 <h4 class="text-center">EVALUACIÓN GENERAL DEL ESQUEMA</h4>
 
-<div class="contenedor_ppal">
+<div class="contenedor_ppal" >
   <table style="width: 100%" class="text-center">
       <tr>
         <!--LINEA DE DOTACION.-->
@@ -25,9 +25,12 @@
 </div>
 
 
-<h4 class="text-center">CONDICIONES DEL ESPACIO INTERVENIDO</h4>
-<div class="contenedor_ppal" style="page-break-after: always;">
-  <table style="width: 100%" class="text-center">
+<div class="contenedor_ppal">
+  <table style="width: 100%; page-break-inside: avoid;" class="text-center">
+      <tr>
+        <td>  <h4 class="text-center">CONDICIONES DEL ESPACIO INTERVENIDO</h4>
+        </td>
+      </tr>
       <tr>
         <!--LINEA DE DOTACION.-->
         <td width="50%">

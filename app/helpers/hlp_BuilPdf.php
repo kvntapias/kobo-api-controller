@@ -130,14 +130,43 @@ class hlp_BuilPdf{
                 $trimmed_key = str_replace($group_name."/", "", $value);
                 
                 $label_preg = $this->getSurveyLabel($trimmed_key);
+                $surveyItemPreg = $this->getSurveyItem($trimmed_key);
+                
                 $respuesta = $this->imprimir_texto($value);
                 $respuestas_grupo[] = [
                     'pregunta' => $label_preg,
-                    'respuesta' => $this->getChoiseLabel($respuesta) ?? $respuesta,
-                    'key' => $value
+                    'respuesta' => $this->format_respuesta($surveyItemPreg, $respuesta) ?? $respuesta,
+                    'key' => $value,
+                    'formatted' => $this->format_respuesta($surveyItemPreg, $respuesta)
                 ];
             }
         }
         return $respuestas_grupo;        
+    }
+
+    public function format_respuesta($surveyItem, $respuesta){
+        $response = "";
+        switch ($surveyItem->type) {
+            case 'select_multiple':
+                $arr_resp = explode(" ", $respuesta);
+                $response = $this->set_label_options($arr_resp);
+            break;
+            case 'select_one':
+                $arr_resp = explode(" ", $respuesta);
+                $response = $this->set_label_options($arr_resp);
+            break;
+            default :
+                $response = $respuesta;
+            break;
+        }
+        return $response;
+    }
+
+    public function set_label_options($arr_respuestas){
+        $arr_resp = [];
+        foreach ($arr_respuestas as $resp) {
+            array_push($arr_resp, $this->getChoiseLabel($resp));
+        }
+        return implode(', ', $arr_resp);
     }
 }
