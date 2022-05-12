@@ -200,7 +200,7 @@
                 <tr>
                   <td>
                     <b>SOPORTE DE SEGUIMIENTO A LA OBRA :</b>
-                    {!! $build_pdf->showImgServer('Soporte_de_seguimiento_a_la_obra', 350, 350) !!}
+                    {!! $build_pdf->showImgServer('Soporte_de_seguimiento_a_la_obra', false, 350, 350) !!}
                   </td>
                 </tr>
             </tbody>

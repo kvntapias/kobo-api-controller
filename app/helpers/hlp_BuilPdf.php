@@ -27,7 +27,7 @@ class hlp_BuilPdf{
                 return $respuesta ?? "";
             }
         }else{
-            return "";
+            return false;
         }
     }
 
@@ -97,8 +97,8 @@ class hlp_BuilPdf{
         return $attach;
     }
 
-    public function showImgServer($label, $heigth=100, $width=100){
-        $respuesta = $this->imprimir_texto($label);
+    public function showImgServer($label = false, $alter_respuesta = false, $heigth=100, $width=100){
+        $respuesta = $this->imprimir_texto($label) ? $this->imprimir_texto($label) : $alter_respuesta;
         // Buscar nombre de archivo en attachments
         $apf_controller = new ApiFormController();
         if ($respuesta) {
