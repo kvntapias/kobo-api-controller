@@ -140,10 +140,6 @@ class hlp_BuilPdf{
                             case 'image':
                                 $subResp = $this->showImgServer(false, $subResp, 300,300);
                             break;
-                            
-                            default:
-                                # code...
-                            break;
                         }
 
                         $respuestas_grupo[] = [
