@@ -24,7 +24,7 @@
   </table>
 </div>
 
-
+<!--CONDICIONES DEL ESPACIO INTERVENIDO-->
 <div class="contenedor_ppal">
   <table style="width: 100%; page-break-inside: avoid;" class="text-center">
       <tr>
@@ -53,6 +53,7 @@
   </table>
 </div>
 
+<!--CONDICIONES SOCIOECONÓMICAS DE LA COMUNIDAD-->
 <div class="contenedor_ppal">
   <table style="width: 100%; page-break-inside: avoid;" class="text-center">
       <tr>
@@ -80,6 +81,7 @@
   </table>
 </div>
 
+<!--ARRAIGO TERRITORIAL-->
 <div class="contenedor_ppal">
   <table style="width: 100%; page-break-inside: avoid;" class="text-center">
       <tr>
@@ -107,7 +109,7 @@
   </table>
 </div>
 
-
+<!--RESULTADO DE LA VISITA-->
 <div class="contenedor_ppal">
   <table style="width: 100%; page-break-inside: avoid;" class="text-center">
       <tr>
