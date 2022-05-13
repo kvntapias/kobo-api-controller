@@ -182,7 +182,7 @@
 </div>
 
 <!--Georeferenciacion-->
-<div class="contenedor_ppal" style="page-break-after: always;">
+<div class="contenedor_ppal">
   <table style="width: 100%" class="text-center">
     <tr>
       <td width="100%">
@@ -210,6 +210,7 @@
   </table>
 </div>
 
+<div class="page-break"></div>
 {{--   
 # TEMPLATE
 <div class="contenedor_ppal">

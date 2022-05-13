@@ -1,9 +1,9 @@
 <h4 class="text-center">EVALUACIÓN GENERAL DEL ESQUEMA</h4>
 
+<!--LINEA DE DOTACION.-->
 <div class="contenedor_ppal" >
   <table style="width: 100%" class="text-center">
       <tr>
-        <!--LINEA DE DOTACION.-->
         <td width="50%">
           <table class="basic_table text-center" style="width: 100%">
             <tbody>
@@ -81,6 +81,7 @@
   </table>
 </div>
 
+<div class="page-break"></div>
 <!--ARRAIGO TERRITORIAL-->
 <div class="contenedor_ppal">
   <table style="width: 100%; page-break-inside: avoid;" class="text-center">

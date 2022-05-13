@@ -65,3 +65,7 @@ body {
     margin-top: 10px;
     margin-bottom: 10px;
 }
+
+.page-break {
+    page-break-after: always;
+}
