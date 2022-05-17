@@ -1,7 +1,32 @@
+
+<!--EVALUACIÓN GENERAL DEL ESQUEMA-->
 <h4 class="text-center">EVALUACIÓN GENERAL DEL ESQUEMA</h4>
 
-<!--LINEA DE DOTACION.-->
 <div class="contenedor_ppal" >
+  <table style="width: 100%" class="text-center">
+      <tr>
+        <td width="50%">
+          <table class="basic_table text-center" style="width: 100%">
+            <tbody>
+              @foreach ($build_pdf->imprimir_grupo_respuestas('group_lj8rf00') as $grup_rpta)
+                <tr style="border: 1px solid black">
+                  <td>
+                    {{ $grup_rpta['pregunta'] }} : <br>
+                  </td>
+                  <td>
+                    {{ $grup_rpta['respuesta'] }}
+                  </td>
+                </tr>
+              @endforeach
+            </tbody>
+          </table>
+        </td>
+      </tr>
+  </table>
+</div>
+
+<!--LINEA DE DOTACION.-->
+{{-- <div class="contenedor_ppal" >
   <table style="width: 100%" class="text-center">
       <tr>
         <td width="50%">
@@ -22,7 +47,7 @@
         </td>
       </tr>
   </table>
-</div>
+</div> --}}
 
 <!--CONDICIONES DEL ESPACIO INTERVENIDO-->
 <div class="contenedor_ppal">
