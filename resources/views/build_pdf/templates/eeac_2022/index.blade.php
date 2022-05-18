@@ -12,6 +12,7 @@
         <main>
             @include('build_pdf.templates.eeac_2022.pages.page_1')
             @include('build_pdf.templates.eeac_2022.pages.page_2')
+            @include('build_pdf.templates.eeac_2022.pages.page_3')
         </main>
     </body>
 </html>

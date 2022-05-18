@@ -66,6 +66,17 @@ class hlp_BuilPdf{
         return reset($choise);
     }
 
+    public function getSurveyItemByRelevant($value){
+        $form_struc = $this->form_structure;
+        $choise = array_filter($form_struc, function($items) use($value) {
+            if (isset($items->relevant)) {
+                $value_relev = $items->relevant;
+                return str_contains($value_relev, $value) ? $items : null;
+            }
+        });
+        return reset($choise);
+    }
+
     public function getSurveyLabel($name){
         $item = $this->getSurveyItem($name);
         return $item ? $item->label[0] : "";
@@ -196,5 +207,20 @@ class hlp_BuilPdf{
             array_push($arr_resp, $this->getChoiseLabel($resp));
         }
         return implode(', ', $arr_resp);
+    }
+
+
+    /**
+     * Imprimir subgrupo de respuestas en condicionado a respuesta anterior
+     */
+    public function imprimir_grupo_respuestas_by_condicion_parent($parent){
+        $respuesta = $this->imprimir_texto($parent);            
+        $itemByRelev = $this->getSurveyItemByRelevant($respuesta);
+        $respuestas_grupo = [];
+        if ($itemByRelev) {
+            $grupo = $itemByRelev->name;
+            $respuestas_grupo = $this->imprimir_grupo_respuestas($grupo);
+        }
+        return $respuestas_grupo;
     }
 }
