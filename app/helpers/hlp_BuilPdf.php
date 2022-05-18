@@ -214,13 +214,16 @@ class hlp_BuilPdf{
      * Imprimir subgrupo de respuestas en condicionado a respuesta anterior
      */
     public function imprimir_grupo_respuestas_by_condicion_parent($parent){
-        $respuesta = $this->imprimir_texto($parent);            
-        $itemByRelev = $this->getSurveyItemByRelevant($respuesta);
+        $respuesta = $this->imprimir_texto($parent); 
         $respuestas_grupo = [];
-        if ($itemByRelev) {
-            $grupo = $itemByRelev->name;
-            $respuestas_grupo = $this->imprimir_grupo_respuestas($grupo);
-        }
+        if ($respuesta) {
+            $itemByRelev = $this->getSurveyItemByRelevant($respuesta);
+            if ($itemByRelev) {
+                
+                $grupo = $itemByRelev->name;
+                $respuestas_grupo = $this->imprimir_grupo_respuestas($grupo);
+            }
+        }        
         return $respuestas_grupo;
     }
 }
