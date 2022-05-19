@@ -8,12 +8,12 @@
         </div>
       </thead>
       <tr>
-        <td width="50%">
+        <td width="100%">
           <table class="basic_table table table-sm" style="width: 100%">
             <tbody>
               @foreach ($build_pdf->imprimir_grupo_respuestas('group_lj8rf00') as $grup_rpta)
                 <tr style="border: 1px solid black">
-                  <td>
+                  <td width="50%">
                     {{ $grup_rpta['pregunta'] }} : <br>
                   </td>
                   <td>
@@ -40,12 +40,12 @@
       </thead>
       <tr>
         <!--LINEA DE DOTACION.-->
-        <td width="50%">
+        <td width="100%">
           <table class="basic_table table table-sm" style="width: 100%">
             <tbody>
               @foreach ($build_pdf->imprimir_grupo_respuestas('group_ox3kp13') as $grup_rpta)
                 <tr style="border: 1px solid black">
-                  <td>
+                  <td width="50%">
                     {{ $grup_rpta['pregunta'] }} : <br>
                   </td>
                   <td>
@@ -71,12 +71,12 @@
         </div>
       </thead>
       <tr>
-        <td width="50%">
+        <td width="100%">
           <table class="basic_table table table-sm" style="width: 100%">
             <tbody>
               @foreach ($build_pdf->imprimir_grupo_respuestas('group_xm2lt02') as $grup_rpta)
                 <tr style="border: 1px solid black">
-                  <td>
+                  <td width="50%">
                     {{ $grup_rpta['pregunta'] }} : <br>
                   </td>
                   <td>
@@ -94,18 +94,21 @@
 <div class="page-break"></div>
 <!--ARRAIGO TERRITORIAL-->
 <div class="contenedor_ppal">
-  <table style="width: 100%; page-break-inside: avoid;" class="text-center">
+  <table style="width: 100%; page-break-inside: avoid;" class="table">
+      <thead>
+        <div class="seccion_head">
+          <h4 class="text-center">
+            ARRAIGO TERRITORIAL, INTEGRACIÓN COMUNITARIA, BIENESTAR EMOCIONAL
+          </h4>
+        </div>
+      </thead>
       <tr>
-        <td>  <h4 class="text-center">ARRAIGO TERRITORIAL, INTEGRACIÓN COMUNITARIA, BIENESTAR EMOCIONAL</h4>
-        </td>
-      </tr>
-      <tr>
-        <td width="50%">
-          <table class="basic_table text-center" style="width: 100%">
+        <td width="100%">
+          <table class="basic_table table table-sm" style="width: 100%">
             <tbody>
               @foreach ($build_pdf->imprimir_grupo_respuestas('group_dy7ma42') as $grup_rpta)
                 <tr style="border: 1px solid black">
-                  <td>
+                  <td width="50%">
                     {{ $grup_rpta['pregunta'] }} : <br>
                   </td>
                   <td>
@@ -122,18 +125,21 @@
 
 <!--RESULTADO DE LA VISITA-->
 <div class="contenedor_ppal">
-  <table style="width: 100%; page-break-inside: avoid;" class="text-center">
+  <table style="width: 100%; page-break-inside: avoid;" class="table">
+      <thead>
+        <div  class="seccion_head">
+          <h4 class="text-center">
+            RESULTADO DE LA VISITA
+          </h4>
+        </div>
+      </thead>
       <tr>
-        <td>  <h4 class="text-center">RESULTADO DE LA VISITA</h4>
-        </td>
-      </tr>
-      <tr>
-        <td width="50%">
-          <table class="basic_table text-center" style="width: 100%">
+        <td width="100%">
+          <table class="basic_table table table-sm" style="width: 100%">
             <tbody>
               @foreach ($build_pdf->imprimir_grupo_respuestas('group_zn3gj10') as $grup_rpta)
                 <tr style="border: 1px solid black">
-                  <td>
+                  <td width="50%">
                     {{ $grup_rpta['pregunta'] }} : <br>
                   </td>
                   <td>
@@ -153,7 +159,8 @@
   <table style="width: 100%; page-break-inside: avoid;" class="text-center">
       <tbody>
         <tr>
-          <td>  <h4 class="text-center">REGISTRO FOTOGRÁFICO VISITA</h4>
+          <td>  
+            <h4 class="text-center">REGISTRO FOTOGRÁFICO VISITA</h4>
           </td>
         </tr>
         @foreach ($build_pdf->imprimir_grupo_respuestas('group_yb9ow60', true) as $grup_rpta)
