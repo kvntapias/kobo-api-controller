@@ -1,6 +1,7 @@
 <div class="seccion_head mt-1">
   <h4 class="text-center">
-    CARACTERIZACIÓN
+    CARACTERIZACIÓN <br>
+    ESQUEMAS ESPECIALES DE ACOMPAÑAMIENTO COMUNITARIO
   </h4>
 </div>
 
