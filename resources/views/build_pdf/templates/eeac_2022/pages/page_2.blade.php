@@ -127,7 +127,7 @@
 <div class="contenedor_ppal">
   <table style="width: 100%; page-break-inside: avoid;" class="table">
       <thead>
-        <div  class="seccion_head">
+        <div class="seccion_head">
           <h4 class="text-center">
             RESULTADO DE LA VISITA
           </h4>
@@ -156,55 +156,69 @@
 
 <!--REGISTRO FOTOGRÁFICO VISITA-->
 <div class="contenedor_ppal">
-  <table style="width: 100%; page-break-inside: avoid;" class="text-center">
-      <tbody>
-        <tr>
-          <td>  
-            <h4 class="text-center">REGISTRO FOTOGRÁFICO VISITA</h4>
-          </td>
-        </tr>
+  <table style="width: 100%; page-break-inside: avoid;" class="table">
+    <thead>
+      <tr>
+        <td colspan="2">
+          <div class="seccion_head">
+            <h4 class="text-center">
+              REGISTRO FOTOGRÁFICO VISITA
+            </h4>
+          </div>
+        </td>
+      </tr>
+    </thead>
+    <tr>
+      <td>
         @foreach ($build_pdf->imprimir_grupo_respuestas('group_yb9ow60', true) as $grup_rpta)
           @switch($grup_rpta['type'])
-              @case('image')
-                <tr style="border: 1px solid black">
-                  <td>
-                    {{ $grup_rpta['pregunta'] }} : <br>
-                  </td>
-                  <td>
-                    {!! $grup_rpta['respuesta'] !!}
-                  </td>
-                </tr>
-              @break
-              @case('text')
-                <tr style="border: 1px solid black">
-                  <td>
-                    {{ $grup_rpta['pregunta'] }} : <br>
-                  </td>
-                  <td>
-                    {{ $grup_rpta['respuesta'] }}
-                  </td>
-                </tr>
-              @break                  
+            @case('image')
+              <tr style="border: 1px solid black">
+                <td width="50%">
+                  {{ $grup_rpta['pregunta'] }} : <br>
+                </td>
+                <td>
+                  {!! $grup_rpta['respuesta'] !!}
+                </td>
+              </tr>
+            @break
+            @case('text')
+              <tr style="border: 1px solid black">
+                <td width="50%">
+                  {{ $grup_rpta['pregunta'] }} : <br>
+                </td>
+                <td>
+                  {{ $grup_rpta['respuesta'] }}
+                </td>
+              </tr>
+            @break                  
           @endswitch
-          
         @endforeach
-      </tbody>
+      </td>
+    </tr>
   </table>
 </div>
 
 <!--SOPORTES ADICIONALES VISITA-->
 <div class="contenedor_ppal">
-  <table style="width: 100%; page-break-inside: avoid;" class="text-center">
-      <tbody>
+  <table style="width: 100%;" class="table">
+      <thead>
         <tr>
-          <td>  <h4 class="text-center">SOPORTES ADICIONALES A LA VISITA</h4>
+          <td colspan="2">
+            <div class="seccion_head">
+              <h4 class="text-center">
+                SOPORTES ADICIONALES A LA VISITA
+              </h4>
+            </div>
           </td>
         </tr>
+      </thead>
+      <tbody>
         @foreach ($build_pdf->imprimir_grupo_respuestas('group_wg8zp28/group_nl9hv20', true) as $grup_rpta)
           @switch($grup_rpta['type'])
               @case('image')
                 <tr style="border: 1px solid black">
-                  <td>
+                  <td width="50%">
                     {{ $grup_rpta['pregunta'] }} : <br>
                   </td>
                   <td>
@@ -214,7 +228,7 @@
               @break
               @case('text')
                 <tr style="border: 1px solid black">
-                  <td>
+                  <td width="50%">
                     {{ $grup_rpta['pregunta'] }} : <br>
                   </td>
                   <td>
@@ -223,44 +237,50 @@
                 </tr>
               @break                  
           @endswitch
-          
         @endforeach
       </tbody>
   </table>
 </div>
 
-<!--SOPORTES ADICIONALES VISITA-->
+<!--CONSTANCIA DE DESARROLLO DE LA VISITA-->
 <div class="contenedor_ppal">
-  <table style="width: 100%; page-break-inside: avoid;" class="text-center">
-      <tbody>
-        <tr>
-          <td>  <h4 class="text-center">**CONSTANCIA DE DESARROLLO DE LA VISITA**</h4>
-          </td>
-        </tr>
-        @foreach ($build_pdf->imprimir_grupo_respuestas('group_ni9ib61') as $grup_rpta)
-          @switch($grup_rpta['type'])
-              @case('image')
-                <tr style="border: 1px solid black">
-                  <td>
-                    {{ $grup_rpta['pregunta'] }} : <br>
-                  </td>
-                  <td>
-                    {!! $grup_rpta['respuesta'] !!}
-                  </td>
-                </tr>
-              @break
-              @case('text')
-                <tr style="border: 1px solid black">
-                  <td>
-                    {{ $grup_rpta['pregunta'] }} : <br>
-                  </td>
-                  <td>
-                    {{ $grup_rpta['respuesta'] }}
-                  </td>
-                </tr>
-              @break                  
-          @endswitch
-        @endforeach
-      </tbody>
+  <table style="width: 100%;" class="table">
+    <thead>
+      <tr>
+        <td colspan="2">
+          <div class="seccion_head">
+            <h4 class="text-center">
+              CONSTANCIA DE DESARROLLO DE LA VISITA
+            </h4>
+          </div>
+        </td>
+      </tr>
+    </thead>
+    <tbody>
+      @foreach ($build_pdf->imprimir_grupo_respuestas('group_ni9ib61') as $grup_rpta)
+        @switch($grup_rpta['type'])
+            @case('image')
+              <tr style="border: 1px solid black">
+                <td width="50%">
+                  {{ $grup_rpta['pregunta'] }} : <br>
+                </td>
+                <td>
+                  {!! $grup_rpta['respuesta'] !!}
+                </td>
+              </tr>
+            @break
+            @case('text')
+              <tr style="border: 1px solid black">
+                <td width="50%">
+                  {{ $grup_rpta['pregunta'] }} : <br>
+                </td>
+                <td>
+                  {{ $grup_rpta['respuesta'] }}
+                </td>
+              </tr>
+            @break                  
+        @endswitch
+      @endforeach
+    </tbody>
   </table>
 </div>
