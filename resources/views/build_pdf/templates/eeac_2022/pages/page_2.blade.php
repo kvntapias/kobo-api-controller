@@ -2,10 +2,11 @@
 <!--EVALUACIÓN GENERAL DEL ESQUEMA-->
 <div class="contenedor_ppal">
   <table style="width: 100%" class="table">
-      <thead><div  class="seccion_head">
-        <h4 class="text-center">EVALUACIÓN GENERAL DEL ESQUEMA</h4>
-      </div>
-    </thead>
+      <thead>
+        <div  class="seccion_head">
+          <h4 class="text-center">EVALUACIÓN GENERAL DEL ESQUEMA</h4>
+        </div>
+      </thead>
       <tr>
         <td width="50%">
           <table class="basic_table table table-sm" style="width: 100%">
@@ -29,15 +30,18 @@
 
 <!--CONDICIONES DEL ESPACIO INTERVENIDO-->
 <div class="contenedor_ppal">
-  <table style="width: 100%; page-break-inside: avoid;" class="text-center">
-      <tr>
-        <td>  <h4 class="text-center">CONDICIONES DEL ESPACIO INTERVENIDO</h4>
-        </td>
-      </tr>
+  <table style="width: 100%; page-break-inside: avoid;" class="table">
+      <thead>
+        <div  class="seccion_head">
+          <h4 class="text-center">
+            CONDICIONES DEL ESPACIO INTERVENIDO
+          </h4>
+        </div>
+      </thead>
       <tr>
         <!--LINEA DE DOTACION.-->
         <td width="50%">
-          <table class="basic_table text-center" style="width: 100%">
+          <table class="basic_table table table-sm" style="width: 100%">
             <tbody>
               @foreach ($build_pdf->imprimir_grupo_respuestas('group_ox3kp13') as $grup_rpta)
                 <tr style="border: 1px solid black">
@@ -58,14 +62,17 @@
 
 <!--CONDICIONES SOCIOECONÓMICAS DE LA COMUNIDAD-->
 <div class="contenedor_ppal">
-  <table style="width: 100%; page-break-inside: avoid;" class="text-center">
-      <tr>
-        <td>  <h4 class="text-center">CONDICIONES SOCIOECONÓMICAS DE LA COMUNIDAD</h4>
-        </td>
-      </tr>
+  <table style="width: 100%; page-break-inside: avoid;" class="table">
+      <thead>
+        <div  class="seccion_head">
+          <h4 class="text-center">
+            CONDICIONES SOCIOECONÓMICAS DE LA COMUNIDAD
+          </h4>
+        </div>
+      </thead>
       <tr>
         <td width="50%">
-          <table class="basic_table text-center" style="width: 100%">
+          <table class="basic_table table table-sm" style="width: 100%">
             <tbody>
               @foreach ($build_pdf->imprimir_grupo_respuestas('group_xm2lt02') as $grup_rpta)
                 <tr style="border: 1px solid black">
