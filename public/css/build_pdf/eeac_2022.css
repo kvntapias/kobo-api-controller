@@ -50,7 +50,6 @@ body {
 
 .basic_table > td {
     margin-top: 0px;
-    color: red;
 }
 
 .full_right{
@@ -68,4 +67,10 @@ body {
 
 .page-break {
     page-break-after: always;
+}
+
+.seccion_head{
+    width: 100%;
+    color: white;
+    background-color: #4C96FE;
 }

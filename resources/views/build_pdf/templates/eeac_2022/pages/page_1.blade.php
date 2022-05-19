@@ -189,16 +189,16 @@
         <table class="basic_table">
             <tbody>
                 <tr>
-                  <td>
+                  {{-- <td>
                     <b>GEOREFERENCIACION :</b>
-                  </td>
+                  </td> --}}
                   <td>
                     <b>LATITUD/LONGITUD</b>
                     {{ $build_pdf->imprimir_texto('GEOREFERENCIACION') }}                    
                   </td>
                 </tr>
                 <tr>
-                  <td>
+                  <td class="mt-2">
                     <b>SOPORTE DE SEGUIMIENTO A LA OBRA :</b>
                     {!! $build_pdf->showImgServer('Soporte_de_seguimiento_a_la_obra', false, 350, 350) !!}
                   </td>
