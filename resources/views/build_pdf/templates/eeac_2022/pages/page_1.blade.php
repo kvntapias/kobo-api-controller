@@ -1,9 +1,12 @@
-<!--Titulo-->
-<h4 class="text-center">CARACTERIZACIÓN</h4>
+<div class="seccion_head mt-1">
+  <h4 class="text-center">
+    CARACTERIZACIÓN
+  </h4>
+</div>
 
 <!--Tratam. Datos personales-->
 <div class="contenedor_ppal">
-  <table class="basic_table {{-- full_right --}}" style="width: 40%">
+  <table class="basic_table" style="width: 40%">
       <tbody>
           <tr>
             <td>
@@ -23,20 +26,20 @@
 
 <!--Nombre Esquema/Codigo-->
 <div class="contenedor_ppal">
-  <table class="basic_table {{-- full_right --}}" style="width: 40%">
+  <table class="basic_table" style="width: 40%">
       <tbody>
-          <tr>
-            <td>
-              <b>NOMBRE DEL ESQUEMA :</b>
-              {{ $build_pdf->imprimir_texto('NOMBRE_DEL_ESQUEMA') }}
-            </td>
-          </tr>
-          <tr>
-            <td>
-              <b>CÓDGO DEL ESQUEMA :</b>
-              {{ $build_pdf->imprimir_texto('C_DIGO_DEL_ESQUEMA') }}
-            </td>
-          </tr>
+        <tr>
+          <td>
+            <b>NOMBRE DEL ESQUEMA :</b>
+            {{ $build_pdf->imprimir_texto('NOMBRE_DEL_ESQUEMA') }}
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <b>CÓDGO DEL ESQUEMA :</b>
+            {{ $build_pdf->imprimir_texto('C_DIGO_DEL_ESQUEMA') }}
+          </td>
+        </tr>
       </tbody>
   </table>
 </div>
