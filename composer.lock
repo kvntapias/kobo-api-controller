@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "fb6869955f6dbe6168cd7fe5b3152993",
+    "content-hash": "0769f01def046d5c3ead7153a5b0e8ba",
     "packages": [
         {
             "name": "barryvdh/laravel-dompdf",
@@ -81,6 +81,124 @@
                 }
             ],
             "time": "2022-01-29T08:02:59+00:00"
+        },
+        {
+            "name": "dantsu/php-image-editor",
+            "version": "1.0.5",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/DantSu/php-image-editor.git",
+                "reference": "8fbb3c4940bdab89eeed58a248771ca064b22a54"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/DantSu/php-image-editor/zipball/8fbb3c4940bdab89eeed58a248771ca064b22a54",
+                "reference": "8fbb3c4940bdab89eeed58a248771ca064b22a54",
+                "shasum": ""
+            },
+            "require": {
+                "ext-gd": "*",
+                "php": ">=7.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "DantSu\\PHPImageEditor\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Franck ALARY",
+                    "homepage": "https://github.com/DantSu",
+                    "role": "Developer"
+                }
+            ],
+            "description": "PHP library to easily edit image with GD extension.",
+            "homepage": "https://github.com/DantSu/php-image-editor",
+            "keywords": [
+                "GD2",
+                "edit",
+                "edition",
+                "editor",
+                "image",
+                "photo",
+                "php",
+                "picture"
+            ],
+            "support": {
+                "issues": "https://github.com/DantSu/php-image-editor/issues",
+                "source": "https://github.com/DantSu/php-image-editor/tree/1.0.5"
+            },
+            "funding": [
+                {
+                    "url": "https://github.com/DantSu",
+                    "type": "github"
+                }
+            ],
+            "time": "2022-05-11T10:44:39+00:00"
+        },
+        {
+            "name": "dantsu/php-osm-static-api",
+            "version": "0.2.5",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/DantSu/php-osm-static-api.git",
+                "reference": "65691132fac4236fe603852984f02be48fc5aad4"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/DantSu/php-osm-static-api/zipball/65691132fac4236fe603852984f02be48fc5aad4",
+                "reference": "65691132fac4236fe603852984f02be48fc5aad4",
+                "shasum": ""
+            },
+            "require": {
+                "dantsu/php-image-editor": "^1.0",
+                "php": ">=7.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "DantSu\\OpenStreetMapStaticAPI\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Franck ALARY",
+                    "homepage": "https://github.com/DantSu",
+                    "role": "Developer"
+                }
+            ],
+            "description": "PHP library to easily get static image from OpenStreetMap (OSM), add markers and draw lines.",
+            "homepage": "https://github.com/DantSu/php-osm-static-api",
+            "keywords": [
+                "OpenStreetMap",
+                "api",
+                "image",
+                "map",
+                "maps",
+                "osm",
+                "php",
+                "static"
+            ],
+            "support": {
+                "issues": "https://github.com/DantSu/php-osm-static-api/issues",
+                "source": "https://github.com/DantSu/php-osm-static-api/tree/0.2.5"
+            },
+            "funding": [
+                {
+                    "url": "https://github.com/DantSu",
+                    "type": "github"
+                }
+            ],
+            "time": "2022-05-10T13:00:43+00:00"
         },
         {
             "name": "doctrine/inflector",

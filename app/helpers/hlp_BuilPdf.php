@@ -3,6 +3,11 @@
 namespace App\Helpers;
 use App\Http\Controllers\ApiFormController;
 
+use \DantSu\OpenStreetMapStaticAPI\OpenStreetMap;
+use \DantSu\OpenStreetMapStaticAPI\LatLng;
+use \DantSu\OpenStreetMapStaticAPI\Line;
+use \DantSu\OpenStreetMapStaticAPI\Markers;
+
 class hlp_BuilPdf{
 
     public $form_structure;
@@ -225,5 +230,27 @@ class hlp_BuilPdf{
             }
         }        
         return $respuestas_grupo;
+    }
+     
+    public function generar_imagen_geo(){
+        $geo_pos = $this->getGeo();
+        $path_img = public_path("marker.png");
+        $img = (new OpenStreetMap(new LatLng($geo_pos['lat'], $geo_pos['lng']), 10, 600, 400))
+            ->addMarkers((new Markers($path_img))
+                    ->setAnchor(Markers::ANCHOR_CENTER, Markers::ANCHOR_BOTTOM)
+                    ->addMarker(new LatLng($geo_pos['lat'], $geo_pos['lng']))
+            )
+            ->getImage()
+            ->getBase64SourcePNG();
+        return $img;
+    }
+
+    public function getGeo(){
+        $geo = $this->form_submission->_geolocation;
+        $info = [
+            'lat' => isset($geo[0]) ? $geo[0] : "",
+            'lng' => isset($geo[1]) ? $geo[1] : ""
+        ];
+        return $info;
     }
 }

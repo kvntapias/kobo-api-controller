@@ -206,6 +206,9 @@
                     <b>SOPORTE DE SEGUIMIENTO A LA OBRA :</b>
                     {!! $build_pdf->showImgServer('Soporte_de_seguimiento_a_la_obra', false, 350, 350) !!}
                   </td>
+                  <td class="ml-2">
+                    <img class="image_map_georef" src="{{ $build_pdf->generar_imagen_geo() }}">
+                  </td>
                 </tr>
             </tbody>
         </table>

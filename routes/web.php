@@ -23,3 +23,5 @@ Route::get('api_form/{form_id}/mostrarSubmission/{submission_id}', 'ApiFormContr
 ->name('api_form.mostrar_submission');
 
 Route::get('api_form/{form_id}/generar_pdf/{submission_id}/{format?}', 'ApiFormController@generar_pdf');
+
+Route::get('imagen_map', 'ApiFormController@imagen_map');
