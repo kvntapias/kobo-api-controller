@@ -25,3 +25,5 @@ Route::get('api_form/{form_id}/mostrarSubmission/{submission_id}', 'ApiFormContr
 Route::get('api_form/{form_id}/generar_pdf/{submission_id}/{format?}', 'ApiFormController@generar_pdf');
 
 Route::get('imagen_map', 'ApiFormController@imagen_map');
+
+Route::get('masivo_generar_pdfs/{form_id}/{action?}', 'ApiFormController@masivo_generar_pdfs');

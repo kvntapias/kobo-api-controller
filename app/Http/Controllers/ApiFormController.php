@@ -6,6 +6,7 @@ use App\ApiForm;
 use Illuminate\Http\Request;
 use App\Helpers\hlp_Text;
 use App\Helpers\hlp_BuilPdf;
+use Illuminate\Support\Facades\Storage;
 
 class ApiFormController extends Controller
 {
@@ -109,7 +110,7 @@ class ApiFormController extends Controller
         return $res;
     }
 
-    public function generar_pdf($form_id, $submission_id, $format = null){
+    public function generar_pdf($form_id, $submission_id, $format = null, $save_on_folder = false){
         $form = ApiForm::find($form_id);
         $template = $form->template;
         
@@ -131,9 +132,60 @@ class ApiFormController extends Controller
             $pdf = \App::make('dompdf.wrapper');
             $pdf->getDomPDF()->set_option("enable_php", true);
             $pdf->loadHTML($template)->setPaper('A4', 'landscape');
-            return $pdf->stream($file_name, ['Attachment' => false]);
+
+            if ($save_on_folder) {
+                return $pdf;
+            }else{
+                return $pdf->stream($file_name, ['Attachment' => false]);
+            }
         }else{
             return view('build_pdf.templates.eeac_2022.index', compact('submission', 'form_structure', 'build_pdf'));
         }
+    }
+
+    /**
+     * Test Generar Masivamente
+     */
+    public function masivo_generar_pdfs($form_id, $action = ""){
+        $form = ApiForm::find($form_id);
+        $submissions = $this->getFormJsonSubmissions($form);
+        if (!$action) {
+            echo "No se especificó accion";
+            die();
+        }
+        if (count($submissions['kobo_info'])) {
+            $submis_data = $submissions['kobo_info'];
+            $folder = "public/".$form->nombre;
+
+            if ($action == "stop") {
+                echo "Stopped";
+                die();
+            }
+            foreach ($submis_data as $submission) {
+                if ($action == "stop") {
+                    echo "Deteniendo script";
+                    break;
+                }else{
+                    $fname = $this->custom_filename($form, $submission);
+                    $pdf = $this->generar_pdf($form_id, $submission->_id, "pdf", true);
+                    Storage::put($folder."/".$fname, $pdf->output());
+                }
+            }
+        }
+    } 
+
+    public function custom_filename($form, $submission){
+        $fname = $submission->_id;
+        switch ($form->template) {
+            case 'eeac_2022.index':
+                $concat = strtoupper($submission->departamento."_".$submission->municipio);
+                $fname .= "_".$concat;
+            break;
+
+            default:
+                $fname = $submission->_id."_".date('Ymdhis');
+            break;
+        }
+        return $fname.".pdf";
     }
 }
