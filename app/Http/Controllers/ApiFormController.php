@@ -188,7 +188,7 @@ class ApiFormController extends Controller
             break;
 
             default:
-                $fname = $submission->_id."_".date('Ymdhis');
+                $fname = $submission->_id."_".date('Ymd');
             break;
         }
         return $fname.".pdf";
