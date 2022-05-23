@@ -41,7 +41,7 @@ function submission_datatable(response){
                 } 
             }
         ],
-        order : [[ 0, "desc" ]]
+        order : [[ 2, "desc" ]]
     });
 }
 
