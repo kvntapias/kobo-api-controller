@@ -147,6 +147,7 @@ class ApiFormController extends Controller
      * Test Generar Masivamente
      */
     public function masivo_generar_pdfs($form_id, $action = ""){
+        ini_set('max_execution_time', 0);
         $form = ApiForm::find($form_id);
         $submissions = $this->getFormJsonSubmissions($form);
         if (!$action) {
