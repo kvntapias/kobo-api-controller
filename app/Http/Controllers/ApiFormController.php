@@ -169,6 +169,10 @@ class ApiFormController extends Controller
                 }else{
                     $fname = $this->custom_filename($form, $submission);
                     $pdf = $this->generar_pdf($form_id, $submission->_id, "pdf", true);
+
+                    if (file_exists($folder."/".$fname)) {
+                        unlink($folder."/".$fname);
+                    }
                     Storage::put($folder."/".$fname, $pdf->output());
                 }
             }
