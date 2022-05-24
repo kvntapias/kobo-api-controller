@@ -193,21 +193,18 @@
         <table class="basic_table">
             <tbody>
                 <tr>
-                  {{-- <td>
-                    <b>GEOREFERENCIACION :</b>
-                  </td> --}}
                   <td>
-                    <b>LATITUD/LONGITUD</b>
-                    {{ $build_pdf->imprimir_texto('GEOREFERENCIACION') }}                    
-                  </td>
-                </tr>
-                <tr>
-                  <td class="mt-2">
                     <b>SOPORTE DE SEGUIMIENTO A LA OBRA :</b>
-                    {!! $build_pdf->showImgServer('Soporte_de_seguimiento_a_la_obra', false, 350, 350) !!}
+                    <div class="image_container">
+                      {!! $build_pdf->showImgServer('Soporte_de_seguimiento_a_la_obra', false, 300, 300) !!}
+                    </div>
                   </td>
-                  <td class="ml-2">
-                    <img class="image_map_georef" src="{{ $build_pdf->generar_imagen_geo() }}">
+                  <td></td>
+                  <td>
+                    <b>LATITUD/LONGITUD :</b>
+                    <div class="image_container">
+                      <img style="margin-top: 10px" class="image_map_georef" src="{{ $build_pdf->generar_imagen_geo() }}" height="300" width="300">
+                    </div>
                   </td>
                 </tr>
             </tbody>
@@ -218,34 +215,3 @@
 </div>
 
 <div class="page-break"></div>
-{{--   
-# TEMPLATE
-<div class="contenedor_ppal">
-  <table>
-      <tbody>
-          <tr>
-            <td class="td-25">
-                <h3>Column {{$i}}</h3>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit...</p>
-                <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris...</p>
-            </td>
-            <td class="td-25">
-                <h3>Column 4</h3>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit...</p>
-                <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris...</p>
-            </td>
-            <td class="td-25">
-                <h3>Column 4</h3>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit...</p>
-                <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris...</p>
-            </td>
-            <td class="td-25">
-                <h3>Column 4</h3>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit...</p>
-                <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris...</p>
-            </td>
-          </tr>
-      </tbody>
-  </table>
-</div>
- --}}
