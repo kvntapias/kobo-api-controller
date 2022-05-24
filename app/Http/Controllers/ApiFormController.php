@@ -114,6 +114,11 @@ class ApiFormController extends Controller
         $form = ApiForm::find($form_id);
         $template = $form->template;
         
+        if (!\View::exists("build_pdf.templates.".$form->template)) {
+            echo "no se encontró plantilla : ".$form->template;
+            die();
+        }
+
         if (!$template) {
             abort(404);
         }
