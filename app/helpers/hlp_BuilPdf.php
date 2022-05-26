@@ -139,7 +139,8 @@ class hlp_BuilPdf{
 
         foreach (array_keys($submission) as $idx => $value) {
             if (str_contains($value, $group_name)) {
-                $trimmed_key = str_replace($group_name."/", "", $value);
+                //$trimmed_key = str_replace($group_name."/", "", $value);
+                $trimmed_key = basename($value);
                 
                 $label_preg = $this->getSurveyLabel($trimmed_key);
                 $surveyItemPreg = $this->getSurveyItem($trimmed_key);
@@ -156,6 +157,14 @@ class hlp_BuilPdf{
                             switch ($surveySubItem->type) {
                                 case 'image':
                                     $subResp = $this->showImgServer(false, $subResp, 300,300);
+                                break;
+
+                                case 'select_one':
+                                    $subResp = $this->getChoiseLabel($subResp);
+                                break;
+
+                                case 'text':
+                                    $subResp = $subResp;
                                 break;
                             }
     
