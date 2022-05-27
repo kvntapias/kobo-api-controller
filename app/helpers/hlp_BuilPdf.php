@@ -262,4 +262,51 @@ class hlp_BuilPdf{
         ];
         return $info;
     }
+
+    public function imprimir_grupo_respuestas_complex($group_name){
+        $submission = (array)$this->form_submission;
+
+        $respuestas_grupo = [];
+
+        foreach (array_keys($submission) as $idx => $value) {
+            if (str_contains($value, $group_name)) {
+                
+                $respuesta = $this->imprimir_texto($value);
+                $trimmed_key = basename($value);
+                $label_preg = $this->getSurveyLabel($trimmed_key);
+                $surveyItemPreg = $this->getSurveyItem($trimmed_key);
+
+                if (is_array($respuesta)) {
+                    // Recorrer cada Fila 
+                    $formatted_subItems = [];
+
+                    foreach ($respuesta as $subResp) {
+                        // Iterar elementos de respuesta contenidos en cada SubItem
+                        foreach ($subResp as $subRespKey => $subRespValue) {
+                            $subres_base_name = basename($subRespKey);
+                            $label_preg = $this->getSurveyLabel($subres_base_name);
+                            $surveyItemPreg = $this->getSurveyItem($subres_base_name);
+                            $type =  $surveyItemPreg->type ?? null; 
+                            $fila_pregunta = [
+                                'pregunta' => $label_preg,
+                                'respuesta' => $this->format_respuesta($surveyItemPreg, $subRespValue) ?? $respuesta,
+                                'type' => $type
+                            ];
+                        }
+                    }
+                }else{
+                    $respuestas_grupo[] = [
+                        'pregunta' => $label_preg,
+                        'respuesta' => $this->format_respuesta($surveyItemPreg, $respuesta) ?? $respuesta,
+                        'key' => $value,
+                        'formatted' => $this->format_respuesta($surveyItemPreg, $respuesta),
+                        'type' => $surveyItemPreg->type ?? null 
+                    ];
+                    
+                }
+
+            }
+        }
+        return $respuestas_grupo;
+    }
 }

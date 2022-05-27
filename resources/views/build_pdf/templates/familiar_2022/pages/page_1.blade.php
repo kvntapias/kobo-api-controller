@@ -23,3 +23,5 @@
       </tbody>
   </table>
 </div>
+
+{{ dd($build_pdf->imprimir_grupo_respuestas_complex('group_wu4ss89')) }}
