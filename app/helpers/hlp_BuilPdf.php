@@ -280,20 +280,20 @@ class hlp_BuilPdf{
                     // Recorrer cada Fila 
                     $formatted_subItems = [];
 
-                    foreach ($respuesta as $subResp) {
+                    /* foreach ($respuesta as $subResp) {
+                        //dd($subResp);
                         // Iterar elementos de respuesta contenidos en cada SubItem
                         foreach ($subResp as $subRespKey => $subRespValue) {
                             $subres_base_name = basename($subRespKey);
                             $label_preg = $this->getSurveyLabel($subres_base_name);
                             $surveyItemPreg = $this->getSurveyItem($subres_base_name);
                             $type =  $surveyItemPreg->type ?? null; 
-                            $fila_pregunta = [
-                                'pregunta' => $label_preg,
-                                'respuesta' => $this->format_respuesta($surveyItemPreg, $subRespValue) ?? $respuesta,
-                                'type' => $type
-                            ];
+                            
+                            
                         }
-                    }
+
+                    } */
+                    return "Multiple child items";
                 }else{
                     $respuestas_grupo[] = [
                         'pregunta' => $label_preg,
