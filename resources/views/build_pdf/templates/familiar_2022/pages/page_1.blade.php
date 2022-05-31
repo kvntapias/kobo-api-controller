@@ -25,19 +25,34 @@
 </div>
 
 
+<!--Información General-->
 <div class="contenedor_ppal">
   <table style="width: 100%" class="text-center">
     <tr>
       <td width="50%">
         <table class="basic_table">
             <tbody>
-                <tr>
-                  <td>
-                    <b>_SE_LE_REALIZO_LA_ENTREGA_DEL_ :</b>
-                    {{ $build_pdf->imprimir_texto('_SE_LE_REALIZO_LA_ENTREGA_DEL_', true) }}
-                    <br>
-                  </td>
-                </tr>
+              <tr>
+                <td>
+                  1.1. Fecha de caracterización :
+                  {{ $build_pdf->imprimir_texto('group_wu4ss89/_1_Fecha_de_caracterizaci_n') }}
+                  <br>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  1.2. Tipo de Documento :
+                  {{ $build_pdf->imprimir_texto('group_wu4ss89/_2_Tipo_de_Documento', TRUE) }}
+                  <br>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  3. ¿SE LE REALIZO LA ENTREGA DEL ESQUEMA DE ACOMPAÑAMIENTO FAMILIAR? :
+                  {{ $build_pdf->imprimir_texto('_SE_LE_REALIZO_LA_ENTREGA_DEL_', true) }}
+                  <br>
+                </td>
+              </tr>
             </tbody>
         </table>
       </td>
@@ -52,7 +67,7 @@
       <thead>
         <div  class="seccion_head">
           <h4 class="text-center">
-            GRUPO RESP group_xr6vs11
+            **4. SEGUIMIENTO A LOS ESQUEMAS ESPECIALES DE ACOMPAÑAMIENTO FAMILIAR**
           </h4>
         </div>
       </thead>
@@ -62,7 +77,7 @@
           <table class="basic_table table table-sm" style="width: 100%">
             <tbody>
               @foreach ($build_pdf->imprimir_grupo_respuestas('group_xr6vs11') as $grup_rpta)
-                <tr style="border: 1px solid black">
+                <tr>
                   <td width="50%">
                     {{ $grup_rpta['pregunta'] }} : <br>
                   </td>
@@ -94,7 +109,7 @@
           <table class="basic_table table table-sm" style="width: 100%">
             <tbody>
               @foreach ($build_pdf->imprimir_grupo_respuestas('group_kg8at81') as $grup_rpta)
-                <tr style="border: 1px solid black">
+                <tr>
                   <td width="50%">
                     {{ $grup_rpta['pregunta'] }} : <br>
                   </td>
@@ -122,10 +137,10 @@
       </tr>
     </thead>
     <tbody>
-      @foreach ($build_pdf->imprimir_grupo_respuestas('group_ww78v63') as $grup_rpta)
+      @foreach ($build_pdf->imprimir_grupo_respuestas($build_pdf->getGrupoBasedRespuesta('group_xr6vs11/TIPO_DE_INVERSI_N_Marque_con_')) as $grup_rpta)
         @switch($grup_rpta['type'])
           @case('image')
-            <tr style="border: 1px solid black">
+            <tr>
               <td width="50%">
                 {{ $grup_rpta['pregunta'] }} : <br>
               </td>
@@ -136,7 +151,7 @@
           @break
           @case('text')
           @case('select_one')
-            <tr style="border: 1px solid black">
+            <tr>
               <td width="50%">
                 {{ $grup_rpta['pregunta'] }} : <br>
               </td>

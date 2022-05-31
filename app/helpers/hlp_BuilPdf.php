@@ -309,4 +309,10 @@ class hlp_BuilPdf{
         }
         return $respuestas_grupo;
     }
+
+    public function getGrupoBasedRespuesta($label_pregunta){
+        $respuesta = $this->imprimir_texto($label_pregunta);
+        $item_label = $this->getSurveyItemByRelevant($respuesta);
+        return $item_label ? $item_label->name : null;
+    }
 }
