@@ -110,50 +110,43 @@
   </table>
 </div>
 
-<div class="page-break"></div>
-
 <div class="contenedor_ppal">
-  <table style="width: 100%; page-break-inside: avoid;" class="table">
+  <table style="width: 100%;" class="basic_table table table-sm">
     <thead>
-      <div class="seccion_head">
-        <h4 class="text-center">
-          GRUPO RPT. - KIT ENTREGADO
-        </h4>
-      </div>
+      <tr class="seccion_head">
+        <th colspan="2">
+          <h4 class="text-center">
+            {{ $build_pdf->imprimir_texto('group_xr6vs11/TIPO_DE_INVERSI_N_Marque_con_', true) }}
+          </h4>
+        </th>
+      </tr>
     </thead>
-    <tr>
-      <!--LINEA DE DOTACION.-->
-      <td width="100%">
-        <table class="basic_table table table-sm" style="width: 100%">
-          <tbody>
-            @foreach ($build_pdf->imprimir_grupo_respuestas('group_ww78v63') as $grup_rpta)
-              @switch($grup_rpta['type'])
-                @case('image')
-                  <tr style="border: 1px solid black">
-                    <td width="50%">
-                      {{ $grup_rpta['pregunta'] }} : <br>
-                    </td>
-                    <td>
-                      {!! $grup_rpta['respuesta'] !!}
-                    </td>
-                  </tr>
-                @break
-                @case('text')
-                @case('select_one')
-                  <tr style="border: 1px solid black">
-                    <td width="50%">
-                      {{ $grup_rpta['pregunta'] }} : <br>
-                    </td>
-                    <td>
-                      {{ $grup_rpta['respuesta'] }}
-                    </td>
-                  </tr>
-                @break                  
-              @endswitch
-            @endforeach
-          </tbody>
-        </table>
-      </td>
-    </tr>
+    <tbody>
+      @foreach ($build_pdf->imprimir_grupo_respuestas('group_ww78v63') as $grup_rpta)
+        @switch($grup_rpta['type'])
+          @case('image')
+            <tr style="border: 1px solid black">
+              <td width="50%">
+                {{ $grup_rpta['pregunta'] }} : <br>
+              </td>
+              <td>
+                {!! $grup_rpta['respuesta'] !!}
+              </td>
+            </tr>
+          @break
+          @case('text')
+          @case('select_one')
+            <tr style="border: 1px solid black">
+              <td width="50%">
+                {{ $grup_rpta['pregunta'] }} : <br>
+              </td>
+              <td>
+                {{ $grup_rpta['respuesta'] }}
+              </td>
+            </tr>
+          @break                  
+        @endswitch
+      @endforeach
+    </tbody>
   </table>
 </div>
