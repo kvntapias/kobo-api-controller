@@ -1,6 +1,6 @@
 <div class="seccion_head mt-1">
     <h4 class="text-center">
-      ESQUEMAS ESPECIALES DE ACOMPAÑAMIENTO FAMILIAR
+      INFORMACION GENERAL
     </h4>
 </div>
 
@@ -93,13 +93,13 @@
   </table>
 </div>
 
-<!-- group_kg8at81 -->
+<!-- GENERACIÓN DE INGRESOS -->
 <div class="contenedor_ppal">
   <table style="width: 100%; page-break-inside: avoid;" class="table">
       <thead>
         <div  class="seccion_head">
           <h4 class="text-center">
-            GRUPO RESP group_kg8at81
+            GENERACIÓN DE INGRESOS
           </h4>
         </div>
       </thead>
