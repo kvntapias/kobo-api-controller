@@ -254,7 +254,8 @@
       <thead>
         <div  class="seccion_head">
           <h4 class="text-center">
-            GENERACIÓN DE INGRESOS
+            Componente al cual esta asociado el EEAF: 
+            {{ $build_pdf->imprimir_texto('group_xr6vs11/_4_1_Componente_al_cual_esta_a', TRUE) }}
           </h4>
         </div>
       </thead>
@@ -263,7 +264,7 @@
         <td width="100%">
           <table class="basic_table table table-sm" style="width: 100%">
             <tbody>
-              @foreach ($build_pdf->imprimir_grupo_respuestas('group_kg8at81') as $grup_rpta)
+              @foreach ($build_pdf->imprimir_grupo_respuestas( $build_pdf->getGrupoBasedRespuesta('group_xr6vs11/_4_1_Componente_al_cual_esta_a') ) as $grup_rpta)
                 <tr>
                   <td width="50%">
                     {{ $grup_rpta['pregunta'] }} : <br>
