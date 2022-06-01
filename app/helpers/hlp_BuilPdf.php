@@ -100,7 +100,9 @@ class hlp_BuilPdf{
      * Se busca comparando atributo filename dentro del attachment
      */
     public function findAttachment($file_name){
-        $formatted = str_replace(" ", "_", $file_name); // Respuesta se Remplazan  los espacios por "_" 
+
+        $formatted = str_replace(['(',')'], "", $file_name);
+        $formatted = str_replace(" ", "_", $formatted); // Respuesta se Remplazan  los espacios por "_"         
         $files = $this->getAttachMents(); // Objetos de tipo archivo 
         $attach = null;
         foreach ($files as $file) {

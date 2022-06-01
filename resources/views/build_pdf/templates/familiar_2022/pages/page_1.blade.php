@@ -4,19 +4,19 @@
     </h4>
 </div>
 
-<!--Tratam. Datos personales-->
+<!--Tratam. Datos personales Y Tipo de Visita-->
 <div class="contenedor_ppal">
   <table class="basic_table" style="width: 40%">
       <tbody>
           <tr>
             <td>
-              <b>AUTORIZACIÓN TRATAMIENTO DE DATOS PERSONALES : </b>
+              AUTORIZACIÓN TRATAMIENTO DE DATOS PERSONALES :
               {{ $build_pdf->imprimir_texto('Autorizaci_n_tratami_de_datos_personales', true) }}
             </td>
           </tr>
           <tr>
             <td>
-              <b>TIPO DE VISITA :</b>
+              TIPO DE VISITA :
               {{ $build_pdf->imprimir_texto('Qu_tipo_de_visita_se_llevar_', true) }}
             </td>
           </tr>
@@ -27,39 +27,119 @@
 
 <!--Información General-->
 <div class="contenedor_ppal">
-  <table style="width: 100%" class="text-center">
+  <table style="width: 100%;" class="text-center">
     <tr>
+      <!--IZQUIERDA-->
       <td width="50%">
         <table class="basic_table">
             <tbody>
               <tr>
                 <td>
-                  1.1. Fecha de caracterización :
+                  Fecha De Caracterización :
                   {{ $build_pdf->imprimir_texto('group_wu4ss89/_1_Fecha_de_caracterizaci_n') }}
                   <br>
                 </td>
               </tr>
               <tr>
                 <td>
-                  1.2. Tipo de Documento :
+                  Tipo De Documento :
                   {{ $build_pdf->imprimir_texto('group_wu4ss89/_2_Tipo_de_Documento', TRUE) }}
                   <br>
                 </td>
               </tr>
               <tr>
                 <td>
-                  3. ¿SE LE REALIZO LA ENTREGA DEL ESQUEMA DE ACOMPAÑAMIENTO FAMILIAR? :
+                  ¿Se Le Realizo La Entrega Del Esquema De Acompañamiento Familiar? :
                   {{ $build_pdf->imprimir_texto('_SE_LE_REALIZO_LA_ENTREGA_DEL_', true) }}
-                  <br>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  Nombres :
+                  {{ $build_pdf->imprimir_texto('group_wu4ss89/_4_Nombres') }}
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  Apellidos :
+                  {{ $build_pdf->imprimir_texto('group_wu4ss89/_5_Apellidos') }}
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  Departamento :
+                  {{ $build_pdf->imprimir_texto('group_wu4ss89/departamento', TRUE) }}
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  Municipio :
+                  {{ $build_pdf->imprimir_texto('group_wu4ss89/municipio', TRUE) }}
+                </td>
+              </tr>
+            </tbody>
+        </table>
+      </td>
+
+      <!--DERECHA-->
+      <td width="50%">
+        <table class="basic_table">
+            <tbody>
+              <tr>
+                <td>
+                  Seleccione nombre de la ubicación : 
+                  {{ $build_pdf->imprimir_texto('group_wu4ss89/Seleccione_nombre_de_la_ubicac', TRUE) }}
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  Centro Poblado : 
+                  {{ $build_pdf->imprimir_texto('group_wu4ss89/_12_Centro_Poblado') }}
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  Teléfono : 
+                  {{ $build_pdf->imprimir_texto('group_wu4ss89/_14_Telefono') }}
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  Correo electrónico : 
+                  {{ $build_pdf->imprimir_texto('group_wu4ss89/Correo_Electr_nico') }}
                 </td>
               </tr>
             </tbody>
         </table>
       </td>
     </tr>
+
+    <!--IMAGENES/AJUSTAR-->
+    {{-- <tr>
+      <td>
+        Fotografia de la Vivienda :
+        <div class="image_container" style="border: width: 100%">
+          {!! $build_pdf->showImgServer('group_wu4ss89/_16_Fotografia_de_la_Vivienda', false, 100, 250) !!}
+        </div>
+      </td>
+    </tr>
+    <tr>    
+      <td>
+        Georreferenciación :
+        {{ $build_pdf->imprimir_texto('group_wu4ss89/Georreferenciaci_n') }}
+        <div class="image_container">
+          <img style="margin-top: 10px" class="image_map_georef" src="{{ $build_pdf->generar_imagen_geo() }}" height="300" width="300">
+        </div>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        Fotografía del entrevistado o de su D.I :
+         {!! $build_pdf->showImgServer('group_wu4ss89/_6_Fotograf_a_del_en_evistado_o_de_su_D_I') !!}
+      </td>
+    </tr> --}}
   </table>
 </div>
-
 
 <!-- group_xr6vs11/_1_CUENTA_CON_ESQUEMA_DE_ACOMP -->
 <div class="contenedor_ppal">
@@ -125,6 +205,7 @@
   </table>
 </div>
 
+<!--TIPO DE ESQUEMA DE ACOMPAÑAMIENTO-->
 <div class="contenedor_ppal">
   <table style="width: 100%;" class="basic_table table table-sm">
     <thead>
