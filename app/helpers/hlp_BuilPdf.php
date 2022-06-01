@@ -36,11 +36,14 @@ class hlp_BuilPdf{
         }
     }
 
-    public function imprimir_texto_implode($label = null, $mayus = false, $search = " ", $separated = ","){
+    public function imprimir_texto_implode($label = null, $mayus = false, $search = " ", $separated = ",", $WithLabel = false){
         $respuesta = $this->imprimir_texto($label);
         if ($respuesta) {
             $respuesta = str_replace($search, $separated, $respuesta);
             $respuesta = $mayus ? strtoupper($respuesta) : $respuesta;
+            if ($WithLabel) {
+                $respuesta = $this->set_label_options(explode(',', $respuesta));
+            }
         }
         return $respuesta;
     }

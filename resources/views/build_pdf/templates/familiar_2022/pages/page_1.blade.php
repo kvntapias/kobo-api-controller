@@ -168,7 +168,7 @@
               <tr>
                 <td>
                   Discapacidad : 
-                  {{ $build_pdf->imprimir_texto('group_wu4ss89/Discapacidad', TRUE) }}
+                  {{ $build_pdf->imprimir_texto_implode('group_wu4ss89/Discapacidad', false, " ", ",", true) }}
                 </td>
               </tr>
               <tr>
