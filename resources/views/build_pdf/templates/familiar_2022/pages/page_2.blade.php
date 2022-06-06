@@ -126,4 +126,121 @@
 
       </tbody>
     </table>
-  </div>
+</div>
+
+<!--Justificaciones-->
+<div class="contenedor_ppal">
+    <table style="width: 100%;" class="basic_table table table-sm">
+        <tbody>
+        <tr>
+            <td width="50%">
+                30. JUSTIFIQUE LAS RESPUESTAS NEGATIVAS. INFORME LA RAZÓN PRINCIPAL POR LA CUAL EL NEGOCIO NO CUENTA CON LOS REQUISITOS MENCIONADOS ANTERIORMENTE
+            </td>
+            <td>
+                {{ $build_pdf->imprimir_texto('_2_JUSTIFIQUE_LAS_RE_ONADOS_ANTERIORMENTE', true) }}
+            </td>
+        </tr>
+        <tr>
+            <td width="50%">
+                31. ¿QUÉ TAN ÚTIL ES PARA USTED DAR CUMPLIMIENTO A TODOS LOS REQUISITOS DE LEGALIZACIÓN?
+            </td>
+            <td>
+                {{ $build_pdf->imprimir_texto('_1_QU_TAN_TIL_ES_ITOS_DE_LEGALIZACI_N', true) }}
+            </td>
+        </tr>
+        <tr>
+            <td width="50%">
+                32. ¿QUÉ TAN INTERESADO SE ENCUENTRA USTED DE CUMPLIR CON TODOS LOS REQUISITOS LEGALES PARA SU NEGOCIO?
+            </td>
+            <td>
+                {{ $build_pdf->imprimir_texto('_2_QU_TAN_INTERESA_ALES_PARA_SU_NEGOCIO', true) }}
+            </td>
+        </tr>
+        <tr>
+            <td width="50%">
+                33. ¿CUÁL DE LOS SIGUIENTES REQUISITOS CONSIDERA QUE DEBE SER RESUELTO DE MANERA MÁS INMEDIATA EN SU NEGOCIO?
+            </td>
+            <td>
+                {{ $build_pdf->imprimir_texto_implode('_3_CU_L_DE_LOS_SIGU_EDIATA_EN_SU_NEGOCIO', false, " ", ",", true) }}
+            </td>
+        </tr>
+        <tr>
+            <td width="50%">
+                34. ¿QUÉ TAN INTERESADO SE ENCUENTRA EN RECIBIR ASISTENCIA TÉCNICA PARA SU NEGOCIO?
+            </td>
+            <td>
+                {{ $build_pdf->imprimir_texto('_1_QU_TAN_INTERESA_NICA_PARA_SU_NEGOCIO', true) }}
+            </td>
+        </tr>
+        <tr>
+            <td width="50%">
+                35. ¿EL EEAF CUENTA CON PRACTIVAS CONTABLES?
+            </td>
+            <td>
+                {{ $build_pdf->imprimir_texto('_2_EL_EEAF_CUENTA_CON_PRACTIV', true) }}
+            </td>
+        </tr>
+        <tr>
+            <td width="50%">
+                36. PORQUE NO SE LLEVA LA CONTABILIDAD ACTUALMENTE:
+            </td>
+            <td>
+                {{ $build_pdf->imprimir_texto('_2_1_PORQUE_NO_SE_LL_ABILIDAD_ACTUALMENTE', true) }}
+            </td>
+        </tr>
+        <tr>
+            <td width="50%">
+                37. ¿EN ALGUN MOMENTO UTILIZARON LA CONTABILIDAD PARA TOMAR DECISIONES EN SU EMPRENDIMIENTO?
+            </td>
+            <td>
+                {{ $build_pdf->imprimir_texto('_3_EN_ALGUN_MOMENTO_UTILIZARO', true) }}
+            </td>
+        </tr>
+        <tr>
+            <td width="50%">
+                38.  En que Forma:
+            </td>
+            <td>
+                {{ $build_pdf->imprimir_texto('_3_1_En_que_Forma') }}
+            </td>
+        </tr>
+        <tr>
+            <td width="50%">
+                39. ¿EL EEAF MANEJA PRECIOS DIFERENCIALES AL MOMENTO DE VENTA DE PRODUCTO O SERVICIO ?
+            </td>
+            <td>
+                {{ $build_pdf->imprimir_texto('_4_EL_EEAF_MANEJA_P_PRODUCTO_O_SERVICIO_', true) }}
+            </td>
+        </tr>
+
+        <tr>
+            <td width="50%">
+                40. Si la respuesta es afirmativa, indique los diferenciales que maneja:
+            </td>
+            <td>
+                {{ $build_pdf->imprimir_texto('_4_1_Si_la_respuesta_es_afirma', false, " ", ",", true) }}
+            </td>
+        </tr>
+
+        <tr>
+            <td width="50%">
+                41. 41. Especifique Cuales
+            </td>
+            <td>
+                {{ $build_pdf->imprimir_texto_implode('_4_2_Especifique_Cuales', false, " ", ",", true) }}
+            </td>
+        </tr>
+
+        <!--42-->
+        <tr>
+            <td width="50%">
+                42. ¿QUÉ REQUIERE EL EEAF PARA MEJORAR LA CALIDAD DE SU PRODUCTO/SERVICIO ?
+            </td>
+            <td>
+                {{ $build_pdf->imprimir_texto('_5_QU_REQUIERE_EL_EEAF_PARA_', false, " ", ",", true) }}
+            </td>
+        </tr>
+
+        </tbody>
+    </table>
+</div>
