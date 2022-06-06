@@ -11,6 +11,7 @@
         <main>
             @include('build_pdf.templates.familiar_2022.pages.page_1')
             @include('build_pdf.templates.familiar_2022.pages.page_2')
+            @include('build_pdf.templates.familiar_2022.pages.grupo_fam')
         </main>
     </body>
 </html>

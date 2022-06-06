@@ -168,6 +168,10 @@ class hlp_BuilPdf{
                                     $subResp = $this->getChoiseLabel($subResp);
                                 break;
 
+                                case 'select_multiple':
+                                    $subResp = $this->format_respuesta($surveySubItem , $subResp);
+                                break;
+
                                 case 'text':
                                     $subResp = $subResp;
                                 break;
