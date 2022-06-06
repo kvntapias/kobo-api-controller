@@ -128,7 +128,7 @@
     </table>
 </div>
 
-<!--Justificaciones-->
+<!--Justificaciones PREHGUNTAS 30 - 55 -->
 <div class="contenedor_ppal">
     <table style="width: 100%;" class="basic_table table table-sm">
         <tbody>
@@ -218,16 +218,16 @@
                 40. Si la respuesta es afirmativa, indique los diferenciales que maneja:
             </td>
             <td>
-                {{ $build_pdf->imprimir_texto('_4_1_Si_la_respuesta_es_afirma', false, " ", ",", true) }}
+                {{ $build_pdf->imprimir_texto_implode('_4_1_Si_la_respuesta_es_afirma', false, " ", ",", true) }}
             </td>
         </tr>
 
         <tr>
             <td width="50%">
-                41. 41. Especifique Cuales
+                41. Especifique Cuales
             </td>
             <td>
-                {{ $build_pdf->imprimir_texto_implode('_4_2_Especifique_Cuales', false, " ", ",", true) }}
+                {{ $build_pdf->imprimir_texto('_4_2_Especifique_Cuales') }}
             </td>
         </tr>
 
@@ -237,7 +237,124 @@
                 42. ¿QUÉ REQUIERE EL EEAF PARA MEJORAR LA CALIDAD DE SU PRODUCTO/SERVICIO ?
             </td>
             <td>
-                {{ $build_pdf->imprimir_texto('_5_QU_REQUIERE_EL_EEAF_PARA_', false, " ", ",", true) }}
+                {{ $build_pdf->imprimir_texto_implode('_5_QU_REQUIERE_EL_EEAF_PARA_', false, " ", ",", true) }}
+            </td>
+        </tr>
+
+        <tr>
+            <td width="50%">
+                43. Especifique Cuales
+            </td>
+            <td>
+                {{ $build_pdf->imprimir_texto('_5_1_Especifique_Cuales') }}
+            </td>
+        </tr>
+
+        <tr>
+            <td width="50%">
+                44. ¿CUÁLES SON LOS CANALES DE DISTRIBUCIÓN DEL EEAF?
+            </td>
+            <td>
+                {{ $build_pdf->imprimir_texto_implode('_6_CU_LES_SON_LOS_CANALES_DE_', false, " ", ",", true) }}
+            </td>
+        </tr>
+
+        <tr>
+            <td width="50%">
+                45. Especifique Cuales
+            </td>
+            <td>
+                {{ $build_pdf->imprimir_texto('_6_1_Especifique_Cuales') }}
+            </td>
+        </tr>
+
+        <tr>
+            <td width="50%">
+                46. ¿LES DA ALGÚN TIPO DE BENEFICIO A SUS CLIENTES?
+            </td>
+            <td>
+                {{ $build_pdf->imprimir_texto('_7_LES_DA_ALG_N_TIP_FICIO_A_SUS_CLIENTES', true) }}
+            </td>
+        </tr>
+
+        <tr>
+            <td width="50%">
+                47. Si la respuesta es afirmativa, indique los beneficios:
+            </td>
+            <td>
+                {{ $build_pdf->imprimir_texto_implode('_7_1_Si_la_respuesta_es_afirma', false, " ", ",", true) }}
+            </td>
+        </tr>
+
+        <tr>
+            <td width="50%">
+                48. Especifique Cuales
+            </td>
+            <td>
+                {{ $build_pdf->imprimir_texto('_7_2_Especifique_Cuales') }}
+            </td>
+        </tr>
+
+        <tr>
+            <td width="50%">
+                49. El EEAF LE GENERA INGRESOS
+            </td>
+            <td>
+                {{ $build_pdf->imprimir_texto('_5_El_EEAF_LE_GENERA_RECURSO', true) }}
+            </td>
+        </tr>
+
+        <tr>
+            <td width="50%">
+                50. ESTOS INGRESOS PROVIENEN DE:
+            </td>
+            <td>
+                {{ $build_pdf->imprimir_texto('_9_ESTOS_RECURSOS_PROVIENEN_DE', true) }}
+            </td>
+        </tr>
+
+        <tr>
+            <td width="50%">
+                51. ¿LO QUE COBRA POR SU PRODUCTO LE ALCANZA PARA CUBRIR LOS COSTOS DE PRODUCCIÓN?
+            </td>
+            <td>
+                {{ $build_pdf->imprimir_texto('_10_LO_QUE_COBRA_PO_COSTOS_DE_PRODUCCI_N', true) }}
+            </td>
+        </tr>
+
+        <tr>
+            <td width="50%">
+                52. ¿EL PERSONAL QUE INTERVIENE EN LA PRODUCCIÓN SE HA CAPACITADO?
+            </td>
+            <td>
+                {{ $build_pdf->imprimir_texto('_11_EL_PERSONAL_QUE_I_N_SE_HA_CAPACITADO', true) }}
+            </td>
+        </tr>
+
+        <tr>
+            <td width="50%">
+                53. ¿HAN REALIZADO ALGÚN EJERCICIO DE PLANIFICACIÓN, EN LOS ÚLTIMOS DOS AÑOS?
+            </td>
+            <td>
+                {{ $build_pdf->imprimir_texto('_12_HAN_REALIZADO_ALG_N_EJERC', true) }}
+            </td>
+        </tr>
+
+        <tr>
+            <td width="50%">
+                54. SELECCIONE LOS EJERCICIOS REALIZADOS
+            </td>
+            <td>
+                {{ $build_pdf->imprimir_texto_implode('_12_HAN_REALIZADO_ALG_N_EJERC', false, " ", ",", true) }}
+            </td>
+        </tr>
+
+        <tr>
+            <td width="50%">
+                55. RECOMENDACIONES
+            </td>
+            <td>
+                {{ $build_pdf->imprimir_texto('_11_RECOMENDACIONES') }}
             </td>
         </tr>
 
