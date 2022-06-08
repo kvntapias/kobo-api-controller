@@ -15,24 +15,24 @@
             </thead>
             <tbody>
                 @foreach ($build_pdf->imprimir_grupo_respuestas('group_wu4ss89/grupo_familiar_01') as $grup_rpta)
-                    @switch($grup_rpta['type'])
-                        @case('text')
-                        @case('select_one')
-                        @case('select_multiple')
-                        @case('date')
-                            <tr>
-                                <td>
-                                    {{ $grup_rpta['pregunta'] }} :
-                                </td>
-                                <td>
-                                    {{ $grup_rpta['respuesta'] }}
-                                </td>
-                            </tr>
-                        @break             
-                    @endswitch
-                    @if ($grup_rpta['key'] == "Tipo_de_documento")
-                        <hr>
-                    @endif
+                    <tr @if ($grup_rpta['key'] == "Tipo_de_documento")
+                            style="border-top: 1px solid black; font-weight: bold"
+                        @endif
+                    >
+                        @switch($grup_rpta['type'])
+                            @case('text')
+                            @case('select_one')
+                            @case('select_multiple')
+                            @case('date')
+                                    <td>
+                                        {{ $grup_rpta['pregunta'] }} :
+                                    </td>
+                                    <td>
+                                        {{ $grup_rpta['respuesta'] }}
+                                    </td>
+                            @break             
+                        @endswitch
+                    </tr>
                 @endforeach
             </tbody>
         </table>
