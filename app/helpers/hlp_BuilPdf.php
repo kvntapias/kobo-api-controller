@@ -252,23 +252,31 @@ class hlp_BuilPdf{
      
     public function generar_imagen_geo(){
         $geo_pos = $this->getGeo();
-        $path_img = public_path("marker.png");
-        $img = (new OpenStreetMap(new LatLng($geo_pos['lat'], $geo_pos['lng']), 10, 600, 400))
-            ->addMarkers((new Markers($path_img))
-                    ->setAnchor(Markers::ANCHOR_CENTER, Markers::ANCHOR_BOTTOM)
-                    ->addMarker(new LatLng($geo_pos['lat'], $geo_pos['lng']))
-            )
-            ->getImage()
-            ->getBase64SourcePNG();
-        return $img;
+        if($geo_pos){
+            $path_img = public_path("marker.png");
+            $img = (new OpenStreetMap(new LatLng($geo_pos['lat'], $geo_pos['lng']), 10, 600, 400))
+                ->addMarkers((new Markers($path_img))
+                        ->setAnchor(Markers::ANCHOR_CENTER, Markers::ANCHOR_BOTTOM)
+                        ->addMarker(new LatLng($geo_pos['lat'], $geo_pos['lng']))
+                )
+                ->getImage()
+                ->getBase64SourcePNG();
+            return $img;
+        }else{
+            return "";
+        }
+        
     }
 
     public function getGeo(){
         $geo = $this->form_submission->_geolocation;
-        $info = [
-            'lat' => isset($geo[0]) ? $geo[0] : "",
-            'lng' => isset($geo[1]) ? $geo[1] : ""
-        ];
+        $info = false;
+        if (!is_null($geo) && isset($geo[0])) {
+            $info = [
+                'lat' => isset($geo[0]) ? $geo[0] : "",
+                'lng' => isset($geo[1]) ? $geo[1] : ""
+            ];
+        }        
         return $info;
     }
 
