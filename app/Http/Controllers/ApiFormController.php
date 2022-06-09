@@ -124,8 +124,7 @@ class ApiFormController extends Controller
         }
 
         $submission = $this->getFormJsonSubmission($form, $submission_id);
-        $form_structure = $this->getFormJsonStructure($form);
-        
+        $form_structure = $this->getFormJsonStructure($form);        
         $survey = (array)$form_structure->content->survey;
         $form_choises = $form_structure->content->choices;
 
@@ -189,6 +188,11 @@ class ApiFormController extends Controller
         switch ($form->template) {
             case 'eeac_2022.index':
                 $concat = strtoupper($submission->departamento."_".$submission->municipio);
+                $fname .= "_".$concat;
+            break;
+
+            case 'familiar_2022.index':
+                $concat = mb_strtoupper($submission->{'group_wu4ss89/departamento'}."_".$submission->{'group_wu4ss89/municipio'});
                 $fname .= "_".$concat;
             break;
 
