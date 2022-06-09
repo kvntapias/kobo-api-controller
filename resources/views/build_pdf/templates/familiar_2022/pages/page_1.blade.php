@@ -191,11 +191,11 @@
   </table>
 </div>
 
+<!--IMÁGENES-->
 <div class="contenedor_ppal">
   <table style="width: 100%; page-break-inside: avoid;" class="table">
     <tbody>
       <tr>
-        <!--LINEA DE DOTACION.-->
         <td width="100%">
           <table class="basic_table table table-sm" style="width: 100%">
             <tbody>
@@ -212,7 +212,7 @@
                   Georreferenciación :
                 </td>
                 <td>
-                  <img style="margin-top: 10px" class="image_map_georef" src="{{ $build_pdf->generar_imagen_geo() }}" height="300" width="300">
+                  <img style="margin-top: 10px; width: 250px!important" class="image_map_georef" src="{{ $build_pdf->generar_imagen_geo() }}">
                 </td>
               </tr>
             </tbody>
