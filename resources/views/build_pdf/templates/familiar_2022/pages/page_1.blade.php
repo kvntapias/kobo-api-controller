@@ -331,3 +331,39 @@
     </tbody>
   </table>
 </div>
+
+
+@if ($build_pdf->imprimir_grupo_respuestas('group_yo3fr74'))
+    <!---OTRO TIPO ESQUEMA -->
+    <div class="contenedor_ppal">
+      <table style="width: 100%;" class="basic_table table table-sm">
+        <tbody>
+          @foreach ($build_pdf->imprimir_grupo_respuestas('group_yo3fr74') as $grup_rpta)
+            @switch($grup_rpta['type'])
+              @case('image')
+                <tr>
+                  <td width="50%">
+                    {{ $grup_rpta['pregunta'] }} : <br>
+                  </td>
+                  <td>
+                    {!! $grup_rpta['respuesta'] !!}
+                  </td>
+                </tr>
+              @break
+              @case('text')
+              @case('select_one')
+                <tr>
+                  <td width="50%">
+                    {{ $grup_rpta['pregunta'] }} : <br>
+                  </td>
+                  <td>
+                    {{ $grup_rpta['respuesta'] }}
+                  </td>
+                </tr>
+              @break                  
+            @endswitch
+          @endforeach
+        </tbody>
+      </table>
+    </div>
+@endif
