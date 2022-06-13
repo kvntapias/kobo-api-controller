@@ -89,13 +89,15 @@
                 <tr>
                   <td>
                     Seleccione nombre de la ubicación : 
-                    {{ $build_pdf->imprimir_texto('group_wu4ss89/Seleccione_nombre_de_la_ubicac', TRUE) }}
+                    {{ $build_pdf->imprimir_texto_implode('group_wu4ss89/Seleccione_nombre_de_la_ubicac', false, " ", ",", true) }}
                   </td>
                 </tr>
                 <tr>
                   <td>
-                    Centro Poblado : 
-                    {{ $build_pdf->imprimir_texto('group_wu4ss89/_12_Centro_Poblado') ?? "-" }}
+                    {{ $build_pdf->imprimir_texto('group_wu4ss89/_12_Centro_Poblado') ?? null }}
+                    {{ $build_pdf->imprimir_texto('group_wu4ss89/_11_Asentamiento_Invasi_n') ?? null }}
+                    {{ $build_pdf->imprimir_texto('group_wu4ss89/_13_Comunidad_ind_gena') ?? null }}
+                    {{ $build_pdf->imprimir_texto('group_wu4ss89/_10_Barrio') ?? null }}
                   </td>
                 </tr>
                 <tr>
