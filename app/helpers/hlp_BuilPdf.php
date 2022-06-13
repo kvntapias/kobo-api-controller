@@ -113,10 +113,10 @@ class hlp_BuilPdf{
             $link = explode('/',$file->filename);
             $trim_fname = end($link);
             if ($trim_fname == $formatted) {
-                $attach = $file;
+                return $file;
             }
         }
-        return $attach;
+        return;
     }
 
     public function showImgServer($label = false, $alter_respuesta = false, $heigth=100, $width=100){
