@@ -81,9 +81,14 @@ class ApiFormController extends Controller
             'headers' => [
                 'Authorization' => 'token '.$auth_token,
             ],
-            'stream' => true
+            'stream' => true,
+            'http_errors' => false
         ];
-        $response = $client->request('GET', $url, $headers);
+        try {
+            $response = $client->request('GET', $url, $headers);
+        }catch(\Exception $e) {
+            return false;
+        }
         return $response->getBody()->getContents();
     }
 
