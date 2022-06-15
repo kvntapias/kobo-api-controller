@@ -6,6 +6,7 @@
         <style>
             @page { margin: 40px 40px 40px; }
         </style>
+        <title>{{ isset($title_page) ? $title_page : "document" }}</title>
     </head>
     <body>
         <main>

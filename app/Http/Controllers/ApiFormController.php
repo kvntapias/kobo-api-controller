@@ -132,12 +132,13 @@ class ApiFormController extends Controller
         $form_structure = $this->getFormJsonStructure($form);        
         $survey = (array)$form_structure->content->survey;
         $form_choises = $form_structure->content->choices;
+        $title_page = $form->nombre;
 
         $build_pdf = new hlp_BuilPdf($survey, $submission, $form_choises, $form );
 
         if ($format == "pdf") {
             $file_name = "PDF_".$submission_id.".pdf";
-            $template = \View::make('build_pdf.templates.'.$template, compact('submission', 'form_structure', 'build_pdf'))->render();
+            $template = \View::make('build_pdf.templates.'.$template, compact('submission', 'form_structure', 'build_pdf', 'title_page'))->render();
             $pdf = \App::make('dompdf.wrapper');
             $pdf->getDomPDF()->set_option("enable_php", true);
             $pdf->loadHTML($template)->setPaper('A4', 'landscape');
@@ -148,7 +149,7 @@ class ApiFormController extends Controller
                 return $pdf->stream($file_name, ['Attachment' => false]);
             }
         }else{
-            return view('build_pdf.templates.eeac_2022.index', compact('submission', 'form_structure', 'build_pdf'));
+            return view('build_pdf.templates.eeac_2022.index', compact('submission', 'form_structure', 'build_pdf', 'title_page'));
         }
     }
 
