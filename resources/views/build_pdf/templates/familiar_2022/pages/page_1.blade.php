@@ -351,6 +351,7 @@
                 </tr>
               @break
               @case('text')
+              @case('integer')
               @case('select_one')
                 <tr>
                   <td width="50%">

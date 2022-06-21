@@ -169,6 +169,10 @@ class hlp_BuilPdf{
                                     $subResp = $this->getChoiseLabel($subResp);
                                 break;
 
+                                case 'integer':
+                                    dd($subResp);
+                                break;
+
                                 case 'select_multiple':
                                     $subResp = $this->format_respuesta($surveySubItem , $subResp);
                                 break;
@@ -192,6 +196,10 @@ class hlp_BuilPdf{
                     switch ($surveyItemPreg->type) {
                         case 'image':
                             $respuesta = $this->showImgServer(false, $respuesta, 300,300);
+                        break;
+
+                        case 'integer':
+                            $respuesta = $respuesta;
                         break;
                     }
                     $respuestas_grupo[] = [
