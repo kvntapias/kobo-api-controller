@@ -115,7 +115,7 @@ class ApiFormController extends Controller
         return $res;
     }
 
-    public function generar_pdf($form_id, $submission_id, $format = null, $save_on_folder = false){
+    public function generar_pdf($form_id, $submission_id, $format = null, $save_on_folder = false, $form_structure = false){
         $form = ApiForm::find($form_id);
         $template = $form->template;
         
@@ -129,7 +129,7 @@ class ApiFormController extends Controller
         }
 
         $submission = $this->getFormJsonSubmission($form, $submission_id);
-        $form_structure = $this->getFormJsonStructure($form);        
+        $form_structure = $form_structure ?? $this->getFormJsonStructure($form);   
         $survey = (array)$form_structure->content->survey;
         $form_choises = $form_structure->content->choices;
         $title_page = $form->nombre;
@@ -159,6 +159,7 @@ class ApiFormController extends Controller
     public function masivo_generar_pdfs($form_id, $action = ""){
         ini_set('max_execution_time', 0);
         $form = ApiForm::find($form_id);
+        $form_structure = $this->getFormJsonStructure($form);
         $submissions = $this->getFormJsonSubmissions($form);
         if (!$action) {
             echo "No se especificó accion";
@@ -178,7 +179,7 @@ class ApiFormController extends Controller
                     break;
                 }else{
                     $fname = $this->custom_filename($form, $submission);
-                    $pdf = $this->generar_pdf($form_id, $submission->_id, "pdf", true);
+                    $pdf = $this->generar_pdf($form_id, $submission->_id, "pdf", true, $form_structure);
 
                     if (file_exists($folder."/".$fname)) {
                         unlink($folder."/".$fname);
