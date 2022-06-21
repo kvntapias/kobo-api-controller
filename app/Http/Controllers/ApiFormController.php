@@ -129,7 +129,7 @@ class ApiFormController extends Controller
         }
 
         $submission = $this->getFormJsonSubmission($form, $submission_id);
-        $form_structure = $form_structure ?? $this->getFormJsonStructure($form);   
+        $form_structure = $form_structure ? $form_structure : $this->getFormJsonStructure($form);  
         $survey = (array)$form_structure->content->survey;
         $form_choises = $form_structure->content->choices;
         $title_page = $form->nombre;
