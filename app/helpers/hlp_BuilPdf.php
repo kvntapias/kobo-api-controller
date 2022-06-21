@@ -170,7 +170,7 @@ class hlp_BuilPdf{
                                 break;
 
                                 case 'integer':
-                                    dd($subResp);
+                                    $subResp = $subResp;
                                 break;
 
                                 case 'select_multiple':
