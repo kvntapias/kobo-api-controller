@@ -15,9 +15,9 @@
       @foreach ($build_pdf->imprimir_grupo_respuestas_by_condicion_parent('_2_LINEA_DE_INVERSION_EEAC') as $grup_rpta)
         @switch($grup_rpta['type'])
             @case('image')
-              <tr style="border: 1px solid black">
+              <tr >
                 <td width="50%">
-                  {{ $grup_rpta['pregunta'] }} : <br>
+                  {{ $grup_rpta['pregunta'] }} : 
                 </td>
                 <td>
                   {!! $grup_rpta['respuesta'] !!}
@@ -26,9 +26,9 @@
             @break
             @case('text')
             @case('select_one')
-              <tr style="border: 1px solid black">
+              <tr >
                 <td width="50%">
-                  {{ $grup_rpta['pregunta'] }} : <br>
+                  {{ $grup_rpta['pregunta'] }} : 
                 </td>
                 <td>
                   {{ $grup_rpta['respuesta'] }}
@@ -59,9 +59,9 @@
           @foreach ($build_pdf->imprimir_grupo_respuestas_by_condicion_parent('_2_1_Seleccione_dotaci_n') as $grup_rpta_subli)
             @switch($grup_rpta_subli['type'])
               @case('image')
-                <tr style="border: 1px solid black">
+                <tr >
                   <td width="50%">
-                      {{ $grup_rpta_subli['pregunta'] }} : <br>
+                      {{ $grup_rpta_subli['pregunta'] }} : 
                   </td>
                   <td>
                       {!! $grup_rpta_subli['respuesta'] !!}
@@ -70,9 +70,9 @@
               @break
               @case('text')
               @case('select_one')
-                <tr style="border: 1px solid black">
+                <tr >
                   <td width="50%">
-                      {{ $grup_rpta_subli['pregunta'] }} : <br>
+                      {{ $grup_rpta_subli['pregunta'] }} : 
                   </td>
                   <td>
                       {{ $grup_rpta_subli['respuesta'] }}

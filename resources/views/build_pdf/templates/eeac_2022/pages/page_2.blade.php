@@ -12,9 +12,9 @@
           <table class="basic_table table table-sm" style="width: 100%">
             <tbody>
               @foreach ($build_pdf->imprimir_grupo_respuestas('group_lj8rf00') as $grup_rpta)
-                <tr style="border: 1px solid black">
+                <tr>
                   <td width="50%">
-                    {{ $grup_rpta['pregunta'] }} : <br>
+                    {{ $grup_rpta['pregunta'] }} : 
                   </td>
                   <td>
                     {{ $grup_rpta['respuesta'] }}
@@ -44,9 +44,9 @@
           <table class="basic_table table table-sm" style="width: 100%">
             <tbody>
               @foreach ($build_pdf->imprimir_grupo_respuestas('group_ox3kp13') as $grup_rpta)
-                <tr style="border: 1px solid black">
+                <tr>
                   <td width="50%">
-                    {{ $grup_rpta['pregunta'] }} : <br>
+                    {{ $grup_rpta['pregunta'] }} : 
                   </td>
                   <td>
                     {{ $grup_rpta['respuesta'] }}
@@ -75,9 +75,9 @@
           <table class="basic_table table table-sm" style="width: 100%">
             <tbody>
               @foreach ($build_pdf->imprimir_grupo_respuestas('group_xm2lt02') as $grup_rpta)
-                <tr style="border: 1px solid black">
+                <tr>
                   <td width="50%">
-                    {{ $grup_rpta['pregunta'] }} : <br>
+                    {{ $grup_rpta['pregunta'] }} : 
                   </td>
                   <td>
                     {{ $grup_rpta['respuesta'] }}
@@ -107,9 +107,9 @@
           <table class="basic_table table table-sm" style="width: 100%">
             <tbody>
               @foreach ($build_pdf->imprimir_grupo_respuestas('group_dy7ma42') as $grup_rpta)
-                <tr style="border: 1px solid black">
+                <tr>
                   <td width="50%">
-                    {{ $grup_rpta['pregunta'] }} : <br>
+                    {{ $grup_rpta['pregunta'] }} : 
                   </td>
                   <td>
                     {{ $grup_rpta['respuesta'] }}
@@ -138,9 +138,9 @@
           <table class="basic_table table table-sm" style="width: 100%">
             <tbody>
               @foreach ($build_pdf->imprimir_grupo_respuestas('group_zn3gj10') as $grup_rpta)
-                <tr style="border: 1px solid black">
+                <tr>
                   <td width="50%">
-                    {{ $grup_rpta['pregunta'] }} : <br>
+                    {{ $grup_rpta['pregunta'] }} : 
                   </td>
                   <td>
                     {{ $grup_rpta['respuesta'] }}
@@ -173,9 +173,9 @@
         @foreach ($build_pdf->imprimir_grupo_respuestas('group_yb9ow60', true) as $grup_rpta)
           @switch($grup_rpta['type'])
             @case('image')
-              <tr style="border: 1px solid black">
+              <tr>
                 <td width="50%">
-                  {{ $grup_rpta['pregunta'] }} : <br>
+                  {{ $grup_rpta['pregunta'] }} : 
                 </td>
                 <td>
                   {!! $grup_rpta['respuesta'] !!}
@@ -183,9 +183,9 @@
               </tr>
             @break
             @case('text')
-              <tr style="border: 1px solid black">
+              <tr>
                 <td width="50%">
-                  {{ $grup_rpta['pregunta'] }} : <br>
+                  {{ $grup_rpta['pregunta'] }} : 
                 </td>
                 <td>
                   {{ $grup_rpta['respuesta'] }}
@@ -217,9 +217,9 @@
         @foreach ($build_pdf->imprimir_grupo_respuestas('group_wg8zp28/group_nl9hv20', true) as $grup_rpta)
           @switch($grup_rpta['type'])
               @case('image')
-                <tr style="border: 1px solid black">
+                <tr>
                   <td width="50%">
-                    {{ $grup_rpta['pregunta'] }} : <br>
+                    {{ $grup_rpta['pregunta'] }} : 
                   </td>
                   <td>
                     {!! $grup_rpta['respuesta'] !!}
@@ -227,9 +227,9 @@
                 </tr>
               @break
               @case('text')
-                <tr style="border: 1px solid black">
+                <tr>
                   <td width="50%">
-                    {{ $grup_rpta['pregunta'] }} : <br>
+                    {{ $grup_rpta['pregunta'] }} :
                   </td>
                   <td>
                     {{ $grup_rpta['respuesta'] }}
@@ -260,9 +260,9 @@
       @foreach ($build_pdf->imprimir_grupo_respuestas('group_ni9ib61') as $grup_rpta)
         @switch($grup_rpta['type'])
             @case('image')
-              <tr style="border: 1px solid black">
+              <tr>
                 <td width="50%">
-                  {{ $grup_rpta['pregunta'] }} : <br>
+                  {{ $grup_rpta['pregunta'] }} :
                 </td>
                 <td>
                   {!! $grup_rpta['respuesta'] !!}
@@ -270,9 +270,9 @@
               </tr>
             @break
             @case('text')
-              <tr style="border: 1px solid black">
+              <tr>
                 <td width="50%">
-                  {{ $grup_rpta['pregunta'] }} : <br>
+                  {{ $grup_rpta['pregunta'] }} :
                 </td>
                 <td>
                   {{ $grup_rpta['respuesta'] }}
