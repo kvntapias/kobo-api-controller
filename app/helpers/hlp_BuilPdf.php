@@ -263,14 +263,19 @@ class hlp_BuilPdf{
         $geo_pos = $this->getGeo();
         if($geo_pos){
             $path_img = public_path("marker.png");
-            $img = (new OpenStreetMap(new LatLng($geo_pos['lat'], $geo_pos['lng']), 10, 600, 400))
+            try {
+                $img = (new OpenStreetMap(new LatLng($geo_pos['lat'], $geo_pos['lng']), 10, 600, 400))
                 ->addMarkers((new Markers($path_img))
                         ->setAnchor(Markers::ANCHOR_CENTER, Markers::ANCHOR_BOTTOM)
                         ->addMarker(new LatLng($geo_pos['lat'], $geo_pos['lng']))
                 )
                 ->getImage()
                 ->getBase64SourcePNG();
-            return $img;
+                return $img;
+            } catch (\Exception $e) {
+                \Log::error($e->getMessage());
+                return "";
+            }
         }else{
             return "";
         }
