@@ -141,6 +141,7 @@
                     El entrevistado conoce su fecha de nacimiento :
                     {{ $build_pdf->imprimir_texto('group_wu4ss89/El_entrevistado_conoce_su_fech') }}
                     {{ $build_pdf->imprimir_texto('group_wu4ss89/Seleccione_la_fecha_de_nacimiento') }}
+                    {{ $build_pdf->imprimir_texto('group_wu4ss89/R_3_Edad') }}
                   </td>
                 </tr>
                 <tr>
