@@ -87,7 +87,12 @@ class hlp_BuilPdf{
 
     public function getSurveyLabel($name){
         $item = $this->getSurveyItem($name);
-        return $item ? $item->label[0] : "";
+        if ($item) {
+            if (isset($item->label[0])) {
+                return $item->label[0];
+            }
+        }
+        return "";
     }
 
     /**
@@ -145,7 +150,6 @@ class hlp_BuilPdf{
 
         foreach (array_keys($submission) as $idx => $value) {
             if (str_contains($value, $group_name)) {
-                //$trimmed_key = str_replace($group_name."/", "", $value);
                 $trimmed_key = basename($value);
                 
                 $label_preg = $this->getSurveyLabel($trimmed_key);
@@ -155,60 +159,67 @@ class hlp_BuilPdf{
 
                 if (is_array($respuesta)) {
                     for ($i = 0; $i < count($respuesta); $i++) { 
-                        foreach ($respuesta[$i] as $key => $subResp) {
-                            $trimmed_subkey = basename($key);
-                            $surveySubItem = $this->getSurveyItem($trimmed_subkey);
-                            $surveySubItemLabel = $this->getSurveyLabel($trimmed_subkey);
-    
-                            switch ($surveySubItem->type) {
-                                case 'image':
-                                    $subResp = $this->showImgServer(false, $subResp, 300,300);
-                                break;
+                        if (is_array($respuesta[$i]) || is_object($respuesta[$i])) {                        
+                            foreach ($respuesta[$i] as $key => $subResp) {
+                                
+                                $trimmed_subkey = basename($key);
+                                $surveySubItem = $this->getSurveyItem($trimmed_subkey);
+                                $surveySubItemLabel = $this->getSurveyLabel($trimmed_subkey);
+                                
+                                if ($surveySubItem) {                            
+                                    switch ($surveySubItem->type) {
+                                        case 'image':
+                                            $subResp = $this->showImgServer(false, $subResp, 300,300);
+                                        break;
 
-                                case 'select_one':
-                                    $subResp = $this->getChoiseLabel($subResp);
-                                break;
+                                        case 'select_one':
+                                            $subResp = $this->getChoiseLabel($subResp);
+                                        break;
 
-                                case 'integer':
-                                    $subResp = $subResp;
-                                break;
+                                        case 'integer':
+                                            $subResp = $subResp;
+                                        break;
 
-                                case 'select_multiple':
-                                    $subResp = $this->format_respuesta($surveySubItem , $subResp);
-                                break;
+                                        case 'select_multiple':
+                                            $subResp = $this->format_respuesta($surveySubItem , $subResp);
+                                        break;
 
-                                case 'text':
-                                    $subResp = $subResp;
-                                break;
+                                        case 'text':
+                                            $subResp = $subResp;
+                                        break;
+                                    }
+            
+                                    $respuestas_grupo[] = [
+                                        'pregunta' => $surveySubItemLabel,
+                                        'respuesta' => $subResp,
+                                        'key' => $trimmed_subkey,
+                                        'formatted' => $key,
+                                        'type' => $surveySubItem->type ?? null
+                                    ];
+                                }
                             }
-    
-                            $respuestas_grupo[] = [
-                                'pregunta' => $surveySubItemLabel,
-                                'respuesta' => $subResp,
-                                'key' => $trimmed_subkey,
-                                'formatted' => $key,
-                                'type' => $surveySubItem->type ?? null
-                            ];
                         }
                     }
                 }else{
+                    if ($surveyItemPreg) {
+                        switch ($surveyItemPreg->type) {
+                            case 'image':
+                                $respuesta = $this->showImgServer(false, $respuesta, 300,300);
+                            break;
+    
+                            case 'integer':
+                                $respuesta = $respuesta;
+                            break;
+                        }
 
-                    switch ($surveyItemPreg->type) {
-                        case 'image':
-                            $respuesta = $this->showImgServer(false, $respuesta, 300,300);
-                        break;
-
-                        case 'integer':
-                            $respuesta = $respuesta;
-                        break;
-                    }
-                    $respuestas_grupo[] = [
-                        'pregunta' => $label_preg,
-                        'respuesta' => $this->format_respuesta($surveyItemPreg, $respuesta) ?? $respuesta,
-                        'key' => $value,
-                        'formatted' => $this->format_respuesta($surveyItemPreg, $respuesta),
-                        'type' => $surveyItemPreg->type ?? null 
-                    ];
+                        $respuestas_grupo[] = [
+                            'pregunta' => $label_preg,
+                            'respuesta' => $this->format_respuesta($surveyItemPreg, $respuesta) ?? $respuesta,
+                            'key' => $value,
+                            'formatted' => $this->format_respuesta($surveyItemPreg, $respuesta),
+                            'type' => $surveyItemPreg->type ?? null 
+                        ];
+                    }   
                 }
             }
         }
@@ -223,7 +234,7 @@ class hlp_BuilPdf{
                 $response = $this->set_label_options($arr_resp);
             break;
             case 'select_one':
-                $arr_resp = explode(" ", $respuesta);
+                $arr_resp = [$respuesta];
                 $response = $this->set_label_options($arr_resp);
             break;
             default :
