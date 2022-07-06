@@ -5,10 +5,9 @@ use App\Http\Controllers\ApiFormController;
 
 use \DantSu\OpenStreetMapStaticAPI\OpenStreetMap;
 use \DantSu\OpenStreetMapStaticAPI\LatLng;
-use \DantSu\OpenStreetMapStaticAPI\Line;
 use \DantSu\OpenStreetMapStaticAPI\Markers;
 
-class hlp_BuilPdf{
+class HlpBuilPdf{
 
     public $form_structure;
     public $form_submission;

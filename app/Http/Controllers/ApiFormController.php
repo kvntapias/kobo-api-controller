@@ -4,8 +4,8 @@ namespace App\Http\Controllers;
 
 use App\ApiForm;
 use Illuminate\Http\Request;
-use App\Helpers\hlp_Text;
-use App\Helpers\hlp_BuilPdf;
+use App\Helpers\Hlp_Text;
+use App\Helpers\HlpBuilPdf;
 use Illuminate\Support\Facades\Storage;
 
 class ApiFormController extends Controller
@@ -134,7 +134,7 @@ class ApiFormController extends Controller
         $form_choises = $form_structure->content->choices;
         $title_page = $form->nombre;
 
-        $build_pdf = new hlp_BuilPdf($survey, $submission, $form_choises, $form );
+        $build_pdf = new HlpBuilPdf($survey, $submission, $form_choises, $form );
 
         if ($format == "pdf") {
             $file_name = "PDF_".$submission_id.".pdf";
