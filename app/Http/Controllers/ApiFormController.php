@@ -194,7 +194,7 @@ class ApiFormController extends Controller
         $fname = $submission->_id;
         switch ($form->template) {
             case 'eeac_2022.index':
-                $concat = strtoupper($submission->departamento."_".$submission->municipio);
+                $concat = mb_strtoupper($submission->departamento."_".$submission->municipio);
                 $fname .= "_".$concat;
             break;
 
