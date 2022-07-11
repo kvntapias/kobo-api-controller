@@ -128,7 +128,7 @@ class ApiFormController extends Controller
             abort(404);
         }
 
-        $submission = $submission_data ?? $this->getFormJsonSubmission($form, $submission_id);
+        $submission = $submission_data ? $submission_data : $this->getFormJsonSubmission($form, $submission_id);
         $form_structure = $form_structure ? $form_structure : $this->getFormJsonStructure($form);  
         $survey = (array)$form_structure->content->survey;
         $form_choises = $form_structure->content->choices;
