@@ -115,7 +115,7 @@ class ApiFormController extends Controller
         return $res;
     }
 
-    public function generar_pdf($form_id, $submission_id, $format = null, $save_on_folder = false, $form_structure = false){
+    public function generar_pdf($form_id, $submission_id, $format = null, $save_on_folder = false, $form_structure = false, $submission_data = false){
         $form = ApiForm::find($form_id);
         $template = $form->template;
         
@@ -128,7 +128,7 @@ class ApiFormController extends Controller
             abort(404);
         }
 
-        $submission = $this->getFormJsonSubmission($form, $submission_id);
+        $submission = $submission_data ?? $this->getFormJsonSubmission($form, $submission_id);
         $form_structure = $form_structure ? $form_structure : $this->getFormJsonStructure($form);  
         $survey = (array)$form_structure->content->survey;
         $form_choises = $form_structure->content->choices;
@@ -179,7 +179,7 @@ class ApiFormController extends Controller
                     break;
                 }else{
                     $fname = $this->custom_filename($form, $submission);
-                    $pdf = $this->generar_pdf($form_id, $submission->_id, "pdf", true, $form_structure);
+                    $pdf = $this->generar_pdf($form_id, $submission->_id, "pdf", true, $form_structure, $submission);
 
                     if (file_exists($folder."/".$fname)) {
                         unlink($folder."/".$fname);
