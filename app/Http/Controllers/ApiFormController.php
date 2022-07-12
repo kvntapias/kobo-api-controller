@@ -162,6 +162,18 @@ class ApiFormController extends Controller
         $form = ApiForm::find($form_id);
         $form_structure = $this->getFormJsonStructure($form);
         $submissions = $this->getFormJsonSubmissions($form);
+
+        // Filtrar respuesta de Api si hay registros en bd para generar.
+        $from_dtb_to_generate = $form->to_generates;
+        if ($from_dtb_to_generate->count()) {
+            $ids_needle = $from_dtb_to_generate->pluck('_id')->toArray();
+           
+            $filtered = array_filter($submissions['kobo_info'], function ($subm) use($ids_needle) {
+                return in_array($subm->_id, $ids_needle) ? $var : null;
+            });
+            $submissions['kobo_info'] = $filtered;
+        }
+
         if (!$action) {
             echo "No se especificó accion";
             die();
