@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\Helpers\Hlp_Text;
 use App\Helpers\HlpBuilPdf;
 use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Facades\Log;
 
 class ApiFormController extends Controller
 {
@@ -115,7 +116,7 @@ class ApiFormController extends Controller
         return $res;
     }
 
-    public function generar_pdf($form_id, $submission_id, $format = null, $save_on_folder = false, $form_structure = false, $submission_data = false){
+    public function generar_pdf($form_id, $submission_id, $format = null, $save_on_folder = false, $form_structure = false, $submission_data = false){        
         $form = ApiForm::find($form_id);
         $template = $form->template;
         
@@ -179,12 +180,15 @@ class ApiFormController extends Controller
                     break;
                 }else{
                     $fname = $this->custom_filename($form, $submission);
-                    $pdf = $this->generar_pdf($form_id, $submission->_id, "pdf", true, $form_structure, $submission);
-
-                    if (file_exists($folder."/".$fname)) {
-                        unlink($folder."/".$fname);
+                    try {
+                        $pdf = $this->generar_pdf($form_id, $submission->_id, "pdf", true, $form_structure, $submission);
+                        if (file_exists($folder."/".$fname)) {
+                            unlink($folder."/".$fname);
+                        }
+                        Storage::put($folder."/".$fname, $pdf->output());
+                    } catch (\Exception $e) {
+                        Log::error($form->nombre."|Falló al generar|".$submission->_id."|".$e->getMessage() );
                     }
-                    Storage::put($folder."/".$fname, $pdf->output());
                 }
             }
         }
