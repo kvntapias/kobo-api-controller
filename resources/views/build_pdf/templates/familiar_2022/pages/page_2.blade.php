@@ -1,4 +1,4 @@
-@if ($build_pdf->imprimir_texto('_1_CUENTA_CON_ESQUEMA_DE_ACOMP') == "si")
+@if ($build_pdf->imprimir_texto('group_xr6vs11/_1_CUENTA_CON_ESQUEMA_DE_ACOMP') == "si")
 
     <div class="contenedor_ppal">
         <table style="width: 100%;" class="basic_table table table-sm text-left">
