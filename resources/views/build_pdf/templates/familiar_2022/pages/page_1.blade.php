@@ -1,9 +1,12 @@
-<div class="seccion_head mt-1">
-    <h4 class="text-center">
-      INFORMACION GENERAL <br>
-      ESQUEMAS ESPECIALES DE ACOMPAÑAMIENTO FAMILIAR
-    </h4>
+{{-- <div class="seccion_head"> --}}
+<div style="margin: 3px 5px 4px 4px; background-color: #4C96FE; color: white;">
+  <h4 class="text-center">
+    INFORMACION GENERAL <br>
+    ESQUEMAS ESPECIALES DE ACOMPAÑAMIENTO FAMILIAR
+  </h4>
 </div>
+    
+{{-- </div> --}}
 
 <!--Tratam. Datos personales Y Tipo de Visita-->
 {{-- <div class="contenedor_ppal">
@@ -436,11 +439,13 @@
 <div class="contenedor_ppal">
   <table style="width: 100%; page-break-inside: avoid;" class="table">
       <thead>
-        <div  class="seccion_head">
-          <h4 class="text-center">
-            **4. SEGUIMIENTO A LOS ESQUEMAS ESPECIALES DE ACOMPAÑAMIENTO FAMILIAR**
-          </h4>
-        </div>
+        <tr class="seccion_head">
+          <th colspan="2">
+            <h4 class="text-center">
+              **4. SEGUIMIENTO A LOS ESQUEMAS ESPECIALES DE ACOMPAÑAMIENTO FAMILIAR**
+            </h4>
+          </th>
+        </tr>
       </thead>
       <tr>
         <!--LINEA DE DOTACION.-->
@@ -464,7 +469,7 @@
   </table>
 </div>
 
-<!-- GENERACIÓN DE INGRESOS -->
+<!-- Componente al cual esta asociado el EEAF -->
 <div class="contenedor_ppal">
   <table style="width: 100%; page-break-inside: avoid;" class="table">
       <thead>
