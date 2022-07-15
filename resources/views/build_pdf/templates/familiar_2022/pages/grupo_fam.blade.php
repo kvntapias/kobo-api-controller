@@ -2,17 +2,6 @@
     <!--INTEGRANTES HOGAR-->
     <div class="contenedor_ppal">
         <table style="width: 100%; page-break-inside: avoid;" class="table">
-            {{-- <thead>
-                <tr>
-                    <td colspan="2">
-                        <div class="seccion_head">
-                            <h4 class="text-center">
-                                INTEGRANTES DEL HOGAR
-                            </h4>
-                        </div>
-                    </td>
-                </tr>
-            </thead> --}}
             <thead>
                 <tr class="seccion_head">
                   <th colspan="2">
