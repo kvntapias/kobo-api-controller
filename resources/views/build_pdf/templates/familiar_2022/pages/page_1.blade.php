@@ -5,7 +5,7 @@
 </div>
 
 <!--Tratam. Datos personales Y Tipo de Visita-->
-<div class="contenedor_ppal">
+{{-- <div class="contenedor_ppal">
   <table class="basic_table" style="width: 40%">
       <tbody>
           <tr>
@@ -22,11 +22,11 @@
           </tr>
       </tbody>
   </table>
-</div>
+</div> --}}
 
 
 <!--Información General-->
-<div class="contenedor_ppal">
+{{-- <div class="contenedor_ppal">
   <table style="width: 100%;" class="text-center">
     <tbody>
       <tr>
@@ -192,6 +192,211 @@
       </tr>
     </tbody>
   </table>
+</div> --}}
+
+<div class="contenedor_ppal">
+  <table style="width: 100%; page-break-inside: avoid; border-top: none" class="table table-sm">      
+    <tbody>
+        <tr>
+          <td width="50%">
+            AUTORIZACIÓN TRATAMIENTO DE DATOS PERSONALES :
+          </td>
+          <td>
+            {{ $build_pdf->imprimir_texto('Autorizaci_n_tratami_de_datos_personales', true) }}
+          </td>
+        </tr>
+        <tr>
+          <td width="50%">
+            TIPO DE VISITA :
+          </td>
+          <td>
+            {{ $build_pdf->imprimir_texto('Qu_tipo_de_visita_se_llevar_', true) }}
+          </td>
+        </tr>
+        <tr>
+          <td width="50%">
+            Fecha De Caracterización :
+          </td>
+          <td>
+            {{ $build_pdf->imprimir_texto('group_wu4ss89/_1_Fecha_de_caracterizaci_n') }}
+          </td>
+        </tr>
+        <tr>
+          <td width="50%">
+            Tipo De Documento :
+          </td>
+          <td>
+            {{ $build_pdf->imprimir_texto('group_wu4ss89/_2_Tipo_de_Documento', TRUE) }}
+          </td>
+        </tr>
+        <tr>
+          <td width="50%">
+            ¿Se Le Realizo La Entrega Del Esquema De Acompañamiento Familiar? :
+          </td>
+          <td>
+            {{ $build_pdf->imprimir_texto('_SE_LE_REALIZO_LA_ENTREGA_DEL_', true) }}
+          </td>
+        </tr>
+        <tr>
+          <td width="50%">
+            Nombres :
+          </td>
+          <td>
+            {{ $build_pdf->imprimir_texto('group_wu4ss89/_4_Nombres') }}
+          </td>
+        </tr>
+        <tr>
+          <td width="50%">
+            Apellidos :
+          </td>
+          <td>
+            {{ $build_pdf->imprimir_texto('group_wu4ss89/_5_Apellidos') }}
+          </td>
+        </tr>
+        <tr>
+          <td width="50%">
+            Departamento :
+          </td>
+          <td>
+            {{ $build_pdf->imprimir_texto('group_wu4ss89/departamento', TRUE) }}
+          </td>
+        </tr>   
+        <tr>
+          <td width="50%">
+            Municipio :
+          </td>
+          <td>
+            {{ $build_pdf->imprimir_texto('group_wu4ss89/municipio', TRUE) }}       
+          </td>
+        </tr> 
+        <tr>
+          <td width="50%">
+            Seleccione nombre de la ubicación : 
+          </td>
+          <td>
+            {{ $build_pdf->imprimir_texto_implode('group_wu4ss89/Seleccione_nombre_de_la_ubicac', false, " ", ",", true) }}
+            {{ $build_pdf->imprimir_texto('group_wu4ss89/_12_Centro_Poblado') ?? null }}
+            {{ $build_pdf->imprimir_texto('group_wu4ss89/_11_Asentamiento_Invasi_n') ?? null }}
+            {{ $build_pdf->imprimir_texto('group_wu4ss89/_13_Comunidad_ind_gena') ?? null }}
+            {{ $build_pdf->imprimir_texto('group_wu4ss89/_10_Barrio') ?? null }}   
+          </td>
+        </tr>
+        <tr>
+          <td width="50%">
+            Teléfono : 
+          </td>
+          <td>
+            {{ $build_pdf->imprimir_texto('group_wu4ss89/_14_Telefono') ?? "-" }}      
+          </td>
+        </tr> 
+        <tr>
+          <td width="50%">
+            Correo electrónico : 
+          </td>
+          <td>
+            {{ $build_pdf->imprimir_texto('group_wu4ss89/Correo_Electr_nico') }}   
+          </td>
+        </tr> 
+        <tr>
+          <td width="50%">
+            Ubicación :
+          </td>
+          <td>
+            {{ $build_pdf->imprimir_texto('group_wu4ss89/_15_Ubicaci_n') }}
+          </td>
+        </tr>   
+        <tr>
+          <td width="50%">
+            Forma De Llegar Al Predio :
+          </td>
+          <td>
+            {{ $build_pdf->imprimir_texto('group_wu4ss89/_17_FORMA_DE_LLEGAR_AL_PREDIO') }}
+          </td>
+        </tr>  
+        <tr>
+          <td width="50%">
+            DEPARTAMENTO NACIMIENTO :
+          </td>
+          <td>
+            {{ $build_pdf->imprimir_texto('group_wu4ss89/group_kq4ae36/DEPARTAMENTO_NACIMIENTO', TRUE) }}
+          </td>
+        </tr>  
+        <tr>
+          <td width="50%">
+            MUNICIPIO NACIMIENTO :
+          </td>
+          <td>
+            {{ $build_pdf->imprimir_texto('group_wu4ss89/group_kq4ae36/MUNICIPIO_NACIMIENTO', TRUE) }}
+          </td>
+        </tr>  
+        <tr>
+          <td width="50%">
+            El entrevistado conoce su fecha de nacimiento :
+          </td>
+          <td>
+            {{ $build_pdf->imprimir_texto('group_wu4ss89/El_entrevistado_conoce_su_fech') }}
+            {{ $build_pdf->imprimir_texto('group_wu4ss89/Seleccione_la_fecha_de_nacimiento') }}
+            {{ $build_pdf->imprimir_texto('group_wu4ss89/R_3_Edad') }}
+          </td>
+        </tr>  
+        <tr>
+          <td width="50%">
+            Jefe/a de hogar : 
+          </td>
+          <td>
+            {{ $build_pdf->imprimir_texto('group_wu4ss89/Jefe_a_de_hogar', TRUE) }}
+          </td>
+        </tr>  
+        <tr>
+          <td width="50%">
+            Sexo : 
+          </td>
+          <td>
+            {{ $build_pdf->imprimir_texto('group_wu4ss89/R_4Sexo', TRUE) }}
+          </td>
+        </tr> 
+        <tr>
+          <td width="50%">
+            Orientación Sexual : 
+          </td>
+          <td>
+            {{ $build_pdf->imprimir_texto('group_wu4ss89/Orientaci_n_sexual', TRUE) }}
+          </td>
+        </tr>
+        <tr>
+          <td width="50%">
+            Identidad de Género : 
+          </td>
+          <td>
+            {{ $build_pdf->imprimir_texto('group_wu4ss89/Identidad_de_g_nero', TRUE) }}
+          </td>
+        </tr>
+        <tr>
+          <td width="50%">
+            Discapacidad : 
+          </td>
+          <td>
+            {{ $build_pdf->imprimir_texto_implode('group_wu4ss89/Discapacidad', false, " ", ",", true) }}
+          </td>
+        </tr>
+        <tr>
+          <td width="50%">
+            Pertenencia Étnica : 
+          </td>
+          <td>
+            {{ $build_pdf->imprimir_texto('group_wu4ss89/Pertenencia_tnica', TRUE) }}
+          </td>
+        </tr>
+        <tr>
+          <td width="50%">
+            ¿ Cuenta con integrantes en el hogar ? : 
+          </td>
+          <td>
+            {{ $build_pdf->imprimir_texto('group_wu4ss89/_Cuenta_con_integrantes_en_el_', TRUE) }}
+          </td>
+        </tr>
+    </tbody>
+  </table>
 </div>
 
 <!--IMÁGENES-->
@@ -291,6 +496,8 @@
   </table>
 </div>
 
+
+<div class="page-break"></div>
 <!--TIPO DE ESQUEMA DE ACOMPAÑAMIENTO-->
 <div class="contenedor_ppal">
   <table style="width: 100%;" class="basic_table table table-sm">

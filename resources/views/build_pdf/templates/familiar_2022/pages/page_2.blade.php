@@ -1,16 +1,7 @@
 @if ($build_pdf->imprimir_texto('_1_CUENTA_CON_ESQUEMA_DE_ACOMP') == "si")
 
     <div class="contenedor_ppal">
-        <table style="width: 100%;" class="basic_table table table-sm">
-        {{-- <thead>
-            <tr class="seccion_head">
-            <th colspan="2">
-                <h4 class="text-center">
-                18 - 28
-                </h4>
-            </th>
-            </tr>
-        </thead> --}}
+        <table style="width: 100%;" class="basic_table table table-sm text-left">
         <tbody>
             <tr>
                 <td width="50%">

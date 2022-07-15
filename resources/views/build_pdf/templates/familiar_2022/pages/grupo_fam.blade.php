@@ -16,7 +16,7 @@
             <tbody>
                 @foreach ($build_pdf->imprimir_grupo_respuestas('group_wu4ss89/grupo_familiar_01') as $grup_rpta)
                     <tr @if ($grup_rpta['key'] == "Tipo_de_documento")
-                            style="border-top: 1px solid black; font-weight: bold"
+                            style="border-top: 1px solid black; font-weight: bold; text-align: left"
                         @endif
                     >
                         @switch($grup_rpta['type'])
@@ -24,10 +24,10 @@
                             @case('select_one')
                             @case('select_multiple')
                             @case('date')
-                                    <td>
+                                    <td width="50%">
                                         {{ $grup_rpta['pregunta'] }} :
                                     </td>
-                                    <td>
+                                    <td style="text-align: left">
                                         {{ $grup_rpta['respuesta'] }}
                                     </td>
                             @break             
