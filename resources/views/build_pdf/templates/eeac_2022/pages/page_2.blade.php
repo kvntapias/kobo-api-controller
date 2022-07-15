@@ -1,7 +1,7 @@
 
 <!--EVALUACIÓN GENERAL DEL ESQUEMA-->
 <div class="contenedor_ppal">
-  <table style="width: 100%" class="table">
+  <table style="width: 100%; page-break-inside: avoid;" class="table">
       <thead>
         <div  class="seccion_head">
           <h4 class="text-center">EVALUACIÓN GENERAL DEL ESQUEMA</h4>
@@ -123,6 +123,7 @@
   </table>
 </div>
 
+<div class="page-break"></div>
 <!--Linea de Intervensión-->
 <div class="contenedor_ppal">
   <table style="width: 100%; page-break-inside: avoid;" class="basic_table table table-sm">

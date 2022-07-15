@@ -1,4 +1,11 @@
-<div class="seccion_head mt-1">
+{{-- <div class="seccion_head mt-1">
+  <h4 class="text-center">
+    CARACTERIZACIÓN <br>
+    ESQUEMAS ESPECIALES DE ACOMPAÑAMIENTO COMUNITARIO
+  </h4>
+</div> --}}
+
+<div style="margin: 3px 5px 4px 4px; background-color: #4C96FE; color: white;">
   <h4 class="text-center">
     CARACTERIZACIÓN <br>
     ESQUEMAS ESPECIALES DE ACOMPAÑAMIENTO COMUNITARIO
@@ -185,7 +192,7 @@
   </table>
 </div>
 
-<!--Georeferenciacion-->
+<!--Georeferenciacion y SOPORTE DE SEGUIMIENTO A LA OBRA-->
 <div class="contenedor_ppal">
   <table style="width: 100%" class="text-center">
     <tr>
