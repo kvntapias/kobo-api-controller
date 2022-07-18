@@ -193,7 +193,7 @@
 </div>
 
 <!--Georeferenciacion y SOPORTE DE SEGUIMIENTO A LA OBRA-->
-<div class="contenedor_ppal">
+{{-- <div class="contenedor_ppal">
   <table style="width: 100%" class="text-center">
     <tr>
       <td width="100%">
@@ -216,6 +216,58 @@
                 </tr>
             </tbody>
         </table>
+      </td>
+    </tr>
+  </table>
+</div>
+ --}}
+{{-- <div class="contenedor_ppal">
+  <table style="width: 100%;" class="table">
+    <tbody>
+      <tr>
+        <td width="50%">
+          SOPORTE DE SEGUIMIENTO A LA OBRA :
+        </td>
+        <td>
+          <div class="image_container">
+            {!! $build_pdf->showImgServer('Soporte_de_seguimiento_a_la_obra', false, 200, 200) !!}
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td width="50%">
+          LATITUD/LONGITUD :
+        </td>
+        <td>
+          <div class="image_container">
+            <img style="margin-top: 10px" class="image_map_georef" src="{{ $build_pdf->generar_imagen_geo() }}" height="300" width="300">
+          </div>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div> --}}
+
+<div class="contenedor_ppal">
+  <table style="width: 100%" class="text-center">
+    <tr>
+      <td width="50%">
+        <b>
+          SOPORTE DE SEGUIMIENTO A LA OBRA :
+        </b>
+        <br>
+        <div class="image_container">
+        {!! $build_pdf->showImgServer('Soporte_de_seguimiento_a_la_obra', false, 300, 300) !!}
+        </div>       
+      </td>
+      <td width="50%">
+        <b>
+          LATITUD/LONGITUD :
+        </b>
+        <br>
+        <div class="image_container">
+          <img style="margin-top: 10px" class="image_map_georef" src="{{ $build_pdf->generar_imagen_geo() }}" height="300" width="300">
+        </div>
       </td>
     </tr>
   </table>
