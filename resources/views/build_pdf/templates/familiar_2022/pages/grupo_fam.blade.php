@@ -41,6 +41,17 @@
 <!--Datos de contacto-->
 <div class="contenedor_ppal">
     <table style="width: 100%;" class="basic_table table table-sm">
+        <thead>
+            <tr>
+              <td colspan="2">
+                <div class="seccion_head">
+                  <h4 class="text-center">
+                    CONSTANCIA DE DESARROLLO DE LA VISITA
+                  </h4>
+                </div>
+              </td>
+            </tr>
+        </thead>
         <tbody>
             <tr>
                 <td width="50%">
