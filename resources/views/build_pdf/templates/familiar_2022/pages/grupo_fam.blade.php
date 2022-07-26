@@ -42,14 +42,12 @@
 <div class="contenedor_ppal">
     <table style="width: 100%;" class="basic_table table table-sm">
         <thead>
-            <tr>
-              <td colspan="2">
-                <div class="seccion_head">
-                  <h4 class="text-center">
+            <tr class="seccion_head">
+              <th colspan="2">
+                <h4 class="text-center">
                     CONSTANCIA DE DESARROLLO DE LA VISITA
-                  </h4>
-                </div>
-              </td>
+                </h4>
+              </th>
             </tr>
         </thead>
         <tbody>
