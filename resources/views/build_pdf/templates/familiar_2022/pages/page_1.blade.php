@@ -42,6 +42,14 @@
         </tr>
         <tr>
           <td width="50%">
+            Número de Documento :
+          </td>
+          <td>
+            {{ $build_pdf->imprimir_texto('group_wu4ss89/_3_Numero_de_documento') }}
+          </td>
+        </tr>
+        <tr>
+          <td width="50%">
             ¿Se Le Realizo La Entrega Del Esquema De Acompañamiento Familiar? :
           </td>
           <td>
