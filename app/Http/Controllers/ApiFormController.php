@@ -169,7 +169,7 @@ class ApiFormController extends Controller
             $ids_needle = $from_dtb_to_generate->pluck('_id')->toArray();
            
             $filtered = array_filter($submissions['kobo_info'], function ($subm) use($ids_needle) {
-                return in_array($subm->_id, $ids_needle) ? $var : null;
+                return in_array($subm->_id, $ids_needle) ? $subm : null;
             });
             $submissions['kobo_info'] = $filtered;
         }
