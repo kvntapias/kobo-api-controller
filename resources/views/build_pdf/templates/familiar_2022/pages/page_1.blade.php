@@ -6,7 +6,7 @@
 </div>
 
 <div class="contenedor_ppal">
-  <table style="width: 100%; page-break-inside: avoid; border-top: none" class="table table-sm">      
+  <table style="width: 100%; page-break-inside: always; border-top: none" class="table table-sm">      
     <tbody>
         <tr>
           <td width="50%">

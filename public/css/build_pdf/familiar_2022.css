@@ -14,8 +14,12 @@ header {
     /** Estilos extra personales **/
     color: white;
     text-align: center;
-    border: 1px solid black;
     border-bottom: none;
+}
+
+.image_header{
+    height: 100px!important; 
+    width: 100%;
 }
 
 body {  
@@ -63,6 +67,7 @@ body {
 .attach_image{
     margin-top: 10px;
     margin-bottom: 10px;
+    max-height: 500px!important;
 }
 
 .page-break {
