@@ -9,6 +9,21 @@
         <title>{{ isset($title_page) ? $title_page : "document" }}</title>
     </head>
     <body>
+        <header>
+            <style>
+                body {  
+                    padding-top: 0px; 
+                    margin-top: 110px; 
+                    margin-bottom: 20px;
+                }
+            </style>
+            <div id="header">
+                <div class="col-md-12 d-inline-block">
+                    <img class="img-fluid image_header" src="{{asset('img/SAMPLE_HEADER.jpg')}}" alt="">
+                </div>
+            </div>
+        </header>
+        
         <main>
             @include('build_pdf.templates.familiar_2022.pages.page_1')
             @include('build_pdf.templates.familiar_2022.pages.page_2')

@@ -135,6 +135,9 @@ return [
     */
     'user_auth_token' => env('KOBO_USER_AUTH_TOKEN', null),
 
+    'pdfs_with_header_image' => env('APP_PDFS_WITH_HEADER_IMAGE', false),
+    'pdfs_header_image_name' => env('APP_PDFS_HEADER_IMAGE_NAME', null) ?? "SAMPLE_HEADER.jpg",
+
     'providers' => [
 
         /*

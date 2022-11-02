@@ -92,6 +92,7 @@
 </div>
 
 <div class="page-break"></div>
+
 <!--ARRAIGO TERRITORIAL-->
 <div class="contenedor_ppal">
   <table style="width: 100%; page-break-inside: avoid;" class="table">
@@ -228,34 +229,32 @@
         </td>
       </tr>
     </thead>
-    <tr>
-      <td>
-        @foreach ($build_pdf->imprimir_grupo_respuestas('group_yb9ow60', true) as $grup_rpta)
-          @switch($grup_rpta['type'])
-            @case('image')
-              <tr>
-                <td width="50%">
-                  {{ $grup_rpta['pregunta'] }} : 
-                </td>
-                <td>
-                  {!! $grup_rpta['respuesta'] !!}
-                </td>
-              </tr>
-            @break
-            @case('text')
-              <tr>
-                <td width="50%">
-                  {{ $grup_rpta['pregunta'] }} : 
-                </td>
-                <td>
-                  {{ $grup_rpta['respuesta'] }}
-                </td>
-              </tr>
-            @break                  
-          @endswitch
-        @endforeach
-      </td>
-    </tr>
+    <tbody>
+      @foreach ($build_pdf->imprimir_grupo_respuestas('group_yb9ow60', true) as $grup_rpta)
+        @switch($grup_rpta['type'])
+          @case('image')
+            <tr>
+              <td width="50%">
+                {{ $grup_rpta['pregunta'] }} : 
+              </td>
+              <td>
+                {!! $grup_rpta['respuesta'] !!}
+              </td>
+            </tr>
+          @break
+          @case('text')
+            <tr>
+              <td width="50%">
+                {{ $grup_rpta['pregunta'] }} : 
+              </td>
+              <td>
+                {{ $grup_rpta['respuesta'] }}
+              </td>
+            </tr>
+          @break                  
+        @endswitch
+      @endforeach
+    </tbody>
   </table>
 </div>
 
