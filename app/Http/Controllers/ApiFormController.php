@@ -178,7 +178,7 @@ class ApiFormController extends Controller
             echo "No se especificó accion";
             die();
         }
-        if (count($submissions['kobo_info'])) {
+        if (count($submissions['kobo_info']) && count($from_dtb_to_generate)) {
             $submis_data = $submissions['kobo_info'];
             $folder = "public/".$form->nombre."/".date('Ymd');
 
@@ -212,6 +212,9 @@ class ApiFormController extends Controller
                     $rowdtb->update();
                 }
             }
+        }else{
+            echo "Sin registros para generar";
+            die();
         }
     } 
 
