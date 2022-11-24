@@ -6,7 +6,7 @@
 header {
     display: block;
     position: fixed;
-    top: 0cm;
+    top: -0.5cm;
     left: 0cm;
     right: 0cm;
     height: 2cm;
@@ -18,8 +18,9 @@ header {
 }
 
 .image_header{
-    height: 100px!important; 
-    width: 100%;
+    margin-top: 0!important;
+    height: 127px!important; 
+    width: 70%;
 }
 
 body {  
