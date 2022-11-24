@@ -180,13 +180,16 @@ class ApiFormController extends Controller
         }
         if (count($submissions['kobo_info'])) {
             $submis_data = $submissions['kobo_info'];
-            $folder = "public/".$form->nombre;
+            $folder = "public/".$form->nombre."/".date('Ymd');
 
             if ($action == "stop") {
                 echo "Stopped";
                 die();
             }
             foreach ($submis_data as $submission) {
+
+                $rowdtb = $from_dtb_to_generate->where('_id', $submission->_id)->first();
+
                 if ($action == "stop") {
                     echo "Deteniendo script";
                     break;
@@ -197,10 +200,16 @@ class ApiFormController extends Controller
                         if (file_exists($folder."/".$fname)) {
                             unlink($folder."/".$fname);
                         }
-                        Storage::put($folder."/".$fname, $pdf->output());
+                        if (Storage::put($folder."/".$fname, $pdf->output())) {
+                            $rowdtb->generacion_message = "Ok";
+                            $rowdtb->es_generado = true;
+                        }
                     } catch (\Exception $e) {
                         Log::error($form->nombre."|Falló al generar|".$submission->_id."|".$e->getMessage() );
+                        $rowdtb->generacion_message = $e->getMessage();
+                        $rowdtb->es_generado = false;
                     }
+                    $rowdtb->update();
                 }
             }
         }
