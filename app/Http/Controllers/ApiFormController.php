@@ -219,16 +219,21 @@ class ApiFormController extends Controller
     } 
 
     public function custom_filename($form, $submission){
-        $fname = $submission->_id;
+        $fname = null;
         switch ($form->template) {
             case 'eeac_2022.index':
-                $concat = mb_strtoupper($submission->departamento."_".$submission->municipio);
-                $fname .= "_".$concat;
+                $concat = mb_strtoupper($submission->C_DIGO_DEL_ESQUEMA."_".$submission->_id."_".$submission->departamento."_".$submission->municipio);
+                $fname = $concat;
             break;
 
             case 'familiar_2022.index':
-                $concat = mb_strtoupper($submission->{'group_wu4ss89/departamento'}."_".$submission->{'group_wu4ss89/municipio'});
-                $fname .= "_".$concat;
+                $concat = mb_strtoupper(
+                    $submission->{'group_wu4ss89/_3_Numero_de_documento'}."_".
+                    $submission->_id."_".
+                    $submission->{'group_wu4ss89/departamento'}."_".
+                    $submission->{'group_wu4ss89/municipio'}
+                );
+                $fname = $concat;
             break;
 
             default:
